@@ -1,0 +1,19 @@
+{
+  "name": "superjsonic",
+  "version": "0.1.0",
+  "description": "A set of tiny JavaScript tools to help developers turn declaritive JSON objects and atomic CSS classes into HTML DOM Elements.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oberocks/superjsonic.git"
+  },
+  "author": "Matt McT",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oberocks/superjsonic/issues"
+  },
+  "homepage": "https://github.com/oberocks/superjsonic#readme"
+}
