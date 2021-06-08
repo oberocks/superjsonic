@@ -14,7 +14,8 @@ A set of powerful and tiny JavaScript ES Module (ESM) tooling classes to help de
 
 * [Introduction](#introduction)
 * [Installation](#installation)
-* [Getting Started](#getting-started)
+* [Generating Elements](#generating-elements)
+* [Generating an Element](#generating-an-element)
 
 ---
 
@@ -45,7 +46,7 @@ One cannot simply install Super JSONic. At least not yet, because it's still bei
 
 
 
-## Getting Started
+## Generating Elements
 
 JavaScript ESM (ES Modules) are also pretty radical and rather super. Some people say that's because of Node.js. But really, it's because writing DRY JavaScript is truly possible right in the browsers... now that we have these module things.
 
@@ -106,3 +107,56 @@ Welcome to the party!
 
 
 ---
+
+
+
+
+## Generating an Element
+
+You can also generate a single element with Super JSONic, but the syntax is a little different to keep the keys required for the task to a minimum.
+
+So assuming we're still using our `const DOM = new Dom_generator();` in the above example, we can generate a single headline element and add it to our document like this:
+
+```javascript
+// Generate the markup
+const headline = DOM.generate_element('h1', "J.J. Fad's Supersonic");
+
+// Add the generated markup to the document
+document.getElementById('target').appendChild(headline);
+```
+
+And if we wanted to specify some attributes for our element, we can simply use something like:
+
+```javascript
+const headline = DOM.generate_element('h1', "J.J. Fad's Supersonic", {
+  class: 'text-3xl'
+});
+```
+
+Or we could even slide in an icon (in this example a FontAwesome icon) to compliment our headline's string with something like:
+
+```javascript
+// Generate the markup
+const icon = DOM.generate_element('i', false, { class: 'fas fa-volume-up mr-2' });
+const headline = DOM.generate_element('h1', [icon, "J.J. Fad's Supersonic"], {
+  class: 'text-3xl'
+});
+
+// Add the generated markup to the document
+document.getElementById('target').appendChild(headline);
+```
+
+Conversely, instead of passing an array of an element node and a headline string, we can set the text property to `false` and pass our icon element and headline string using the final child nodes parameter (which expects an array of text strings and/or element nodes) for your element like so:
+
+```javascript
+// Generate the markup
+const icon = DOM.generate_element('i', false, { class: 'fas fa-volume-up mr-2' });
+const headline = DOM.generate_element('h1', false, { class: 'text-3xl' }, [icon, "J.J. Fad's Supersonic"]);
+
+// Add the generated markup to the document
+document.getElementById('target').appendChild(headline);
+```
+
+
+
+
