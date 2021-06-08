@@ -2,7 +2,7 @@
 .vscode
 .well-known
 .htpasswd
-.htaccess
+/.htaccess
 error_log
 node_modules/
 
