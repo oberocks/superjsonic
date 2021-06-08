@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+
+    <head>
+
+        <meta charset="UTF-8" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+    </head>
+
+    <body class="bg-gray-900 text-gray-100 min-h-screen">
+
+        
+        <div id="target"></div>
+
+
+        <script type="module">
+            
+            // import module
+            import { Dom_generator } from './js/modules/Dom_generator.js';
+
+            // setup constant variables
+            const DOM = new Dom_generator();
+            const fragment = document.createDocumentFragment();
+            
+            // generate a headline element
+            let headline = DOM.generate_element(
+                'h1',
+                ['Headline Example Text'],
+                { class: 'text-3xl text-center' }
+            );
+
+            // generate a headline element
+            let section = DOM.generate_element(
+                'section',
+                false,
+                { class: 'grid grid-cols-1 items-center p-10' },
+                headline
+            );
+
+            // append the element to the fragment
+            fragment.appendChild(section);
+
+
+
+
+
+
+            // create a schema for multi-element markup
+            const article_schema = {
+                tag: 'article',
+                attributes: {
+                    class: 'grid grid-cols-1 items-center p-10'
+                },
+                children: [
+                    {
+                        tag: 'h1',
+                        text: ['Headline Example Text'],
+                        attributes: {
+                            class: 'text-3xl text-center'
+                        }
+                    },
+                    {
+                        tag: 'p',
+                        text: ['Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, delectus quaerat aliquam illo aspernatur minus non a! Dicta error deserunt unde neque ad natus, cupiditate consectetur ullam quam eum debitis!']
+                    }
+                ]
+            };
+
+            // generate the markup elements with the schema
+            const article = DOM.generate_elements(article_schema);
+
+            console.log(article);
+
+            // append the generated markup to the fragment
+            fragment.appendChild(article);
+
+
+
+
+
+
+            // and append the fragment to the document
+            document.getElementById('target').appendChild(fragment);
+
+        </script>
+
+    </body>
+
+</html>
