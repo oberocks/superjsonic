@@ -14,7 +14,7 @@ A set of powerful and tiny JavaScript ES Module (ESM) tooling classes to help de
 
 * [Introduction](#introduction)
 * [Installation](#installation)
-* [Basic Concepts](#basic-concepts)
+* [Getting Started](#getting-started)
 
 ---
 
@@ -45,7 +45,7 @@ One cannot simply install Super JSONic. At least not yet, because it's still bei
 
 
 
-## Basic Concepts
+## Getting Started
 
 JavaScript ESM (ES Modules) are also pretty radical and rather super. Some people say that's because of Node.js. But really, it's because writing DRY JavaScript is truly possible right in the browsers... now that we have these module things.
 
