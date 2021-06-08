@@ -29,7 +29,7 @@
             // generate a headline element
             let headline = DOM.generate_element(
                 'h1',
-                ['Headline Example Text'],
+                'Headline Example Text',
                 { class: 'text-3xl text-center' }
             );
 
@@ -44,47 +44,54 @@
             // append the element to the fragment
             fragment.appendChild(section);
 
+            // and append the fragment to the document
+            document.getElementById('target').appendChild(fragment);
+
+
+
+
+
+
 
 
 
 
 
             // create a schema for multi-element markup
-            const article_schema = {
-                tag: 'article',
-                attributes: {
-                    class: 'grid grid-cols-1 items-center p-10'
-                },
-                children: [
-                    {
-                        tag: 'h1',
-                        text: ['Headline Example Text'],
-                        attributes: {
-                            class: 'text-3xl text-center'
-                        }
+            const article_schema = [
+                {
+                    tag: 'article',
+                    attributes: {
+                        class: 'grid grid-cols-1 items-center p-10'
                     },
-                    {
-                        tag: 'p',
-                        text: ['Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, delectus quaerat aliquam illo aspernatur minus non a! Dicta error deserunt unde neque ad natus, cupiditate consectetur ullam quam eum debitis!']
-                    }
-                ]
-            };
+                    children: [
+                        {
+                            tag: 'h1',
+                            text: 'Headline Example Text',
+                            attributes: {
+                                class: 'text-3xl text-center'
+                            }
+                        },
+                        {
+                            tag: 'p',
+                            attributes: {
+                                class: 'max-w-lg mx-auto text-center text-gray-300'
+                            },
+                            text: [
+                                'Lorem ipsum dolor sit amet, consectetur\'s adipisicing elit. Inventore, delectus quaerat aliquam illo aspernatur minus non a! Dicta error deserunt ',
+                                DOM.generate_element('a', 'lorem anchor textum', { class:'text-blue-400', href: '#' }),
+                                ' unde neque ad natus, cupiditate consectetur ullam quam eum debitis!'
+                            ]
+                        }
+                    ]
+                }
+            ];
 
             // generate the markup elements with the schema
             const article = DOM.generate_elements(article_schema);
 
-            console.log(article);
-
-            // append the generated markup to the fragment
-            fragment.appendChild(article);
-
-
-
-
-
-
             // and append the fragment to the document
-            document.getElementById('target').appendChild(fragment);
+            document.getElementById('target').appendChild(article);
 
         </script>
 

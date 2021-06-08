@@ -47,13 +47,13 @@ export class Dom_generator {
                 if (array[i].tag) {
                     let child = document.createElement(array[i].tag);
                     if (array[i].attributes) {
-                        apply_attributes(child, array[i].attributes);
+                        this.apply_attributes(child, array[i].attributes);
                     }
                     if (array[i].text) {
-                        insert_text(child, array[i].text); 
+                        this.insert_text(child, array[i].text); 
                     }
                     if (array[i].children) {
-                        append_children_array(child, array[i].children);
+                        this.append_children_array(child, array[i].children);
                     }
                     node.appendChild(child);
                 } else if (type_checker.is_element_node(array[i])) {
@@ -195,15 +195,15 @@ export class Dom_generator {
                     let parent = document.createElement(settings[i].tag);
     
                     if (settings[i].attributes) {
-                        apply_attributes(parent, settings[i].attributes);
+                        this.apply_attributes(parent, settings[i].attributes);
                     }
     
                     if (settings[i].text) {
-                        insert_text(parent, settings[i].text);
+                        this.insert_text(parent, settings[i].text);
                     }
     
                     if (settings[i].children) {
-                        append_children_array(parent, settings[i].children);
+                        this.append_children_array(parent, settings[i].children);
                     }
     
                     output.appendChild(parent);
