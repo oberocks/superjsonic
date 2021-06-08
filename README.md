@@ -6,4 +6,4 @@
 
 # superjsonic
 
-A JavaScript tool to turn declaritive JSON objects into HTML DOM Elements that can be styled with Atomic CSS classes.
+A set of tiny JavaScript tools to help developers turn declaritive JSON objects and atomic CSS classes into HTML DOM Elements.
