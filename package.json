@@ -1,6 +1,6 @@
 {
   "name": "superjsonic",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A set of tiny JavaScript tools to help developers turn declaritive JSON objects and atomic CSS classes into HTML DOM Elements.",
   "main": "index.js",
   "scripts": {
