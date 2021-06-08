@@ -16,6 +16,9 @@ A set of powerful and tiny JavaScript ES Module (ESM) tooling classes to help de
 * [Installation](#installation)
 * [Generating Elements](#generating-elements)
 * [Generating an Element](#generating-an-element)
+* [The Dom Generator Class](#the-dom-generator-class)
+  * [on_dom_ready()](#on_dom_ready)
+* [The Type Checker Class](#the-type-checker-class)
 
 ---
 
@@ -156,6 +159,34 @@ const headline = DOM.generate_element('h1', false, { class: 'text-3xl' }, [icon,
 // Add the generated markup to the document
 document.getElementById('target').appendChild(headline);
 ```
+
+
+
+---
+
+
+
+
+## The Dom Generator Class
+
+_Coming Soon!_
+
+
+
+### on_dom_ready()
+
+_Coming Soon!_
+
+
+
+---
+
+
+
+
+## The Type Checker Class
+
+_Coming Soon!_
 
 
 
