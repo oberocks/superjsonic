@@ -93,6 +93,30 @@
             // and append the fragment to the document
             document.getElementById('target').appendChild(article);
 
+
+
+
+
+
+
+
+
+
+            const bizness = [
+                {
+                    tag: 'h1',
+                    text: 'My Dope Song Request'
+                },
+                {
+                    tag: 'p',
+                    text: 'Check out my dope song request, Super JSONic DJ. My song request is naturally the late 80s smash hit "Supersonic" by J.J. Fad.'
+                }
+            ];
+
+            const bizness_markup = DOM.generate_elements(bizness);
+
+            document.getElementById('target').appendChild(bizness_markup);
+
         </script>
 
     </body>
