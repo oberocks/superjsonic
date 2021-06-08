@@ -6,4 +6,4 @@
 
 # superjsonic
 
-A set of tiny JavaScript tools to help developers turn declaritive JSON objects and atomic CSS classes into HTML DOM Elements.
+A set of powerful and tiny JavaScript ES Module (ESM) tooling classes to help developers turn declaritive JSON, atomic CSS classes, and copy/media into HTML DOM Elements.
