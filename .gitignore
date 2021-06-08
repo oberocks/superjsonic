@@ -4,6 +4,7 @@
 .htpasswd
 error_log
 node_modules/
+.htaccess
 
 # MacOS General
 .DS_Store
