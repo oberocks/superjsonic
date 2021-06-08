@@ -27,9 +27,9 @@ Sometimes you just need to author some markup with JavaScript. Other times, you 
 
 Enter the extremely radical, Super JSONic.
 
-**Q: WTF is so "super" about this questionable idea?**
-
-**A:** Glad you asked. It's not really super. But it is radical. But "Radical JSONic" doesn't harken the aged mind back to the (possibly) greatest Easy-E side project ever... [J.J. Fad](https://en.wikipedia.org/wiki/J._J._Fad). Anyway, much like the lyrics of [Supersonic](https://en.wikipedia.org/wiki/Supersonic_(J._J._Fad_album)), if you don't like this code, it'll go big in your behind. Don't say you weren't warned.
+> **Q: WTF is so "super" about this questionable idea?**
+> 
+> **A:** Glad you asked. It's not really super. But it is radical. But "Radical JSONic" doesn't harken the aged mind back to the (possibly) greatest Easy-E side project ever... [J.J. Fad](https://en.wikipedia.org/wiki/J._J._Fad). Anyway, much like the lyrics of [Supersonic](https://en.wikipedia.org/wiki/Supersonic_(J._J._Fad_album)), if you don't like this code, it'll go big in your behind. Don't say you weren't warned.
 
 ---
 
