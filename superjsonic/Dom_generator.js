@@ -2,7 +2,7 @@ import { Type_checker } from './Type_checker.js';
 
 export class Dom_generator {
     
-    on_dom_ready(callback) {
+    on_dom_ready (callback) {
         document.readyState === "interactive" || document.readyState === "complete" ? callback() : document.addEventListener("DOMContentLoaded", callback);
     }
 
@@ -151,8 +151,12 @@ export class Dom_generator {
             if (type_checker.is_array(nestedElem)) {
                 // loop through the array
                 for (var i = 0; i < nestedElem.length; i++) {
+                    // if it's a string then create a text node and append it to the returned element
+                    if (type_checker.is_string(nestedElem[i])) {
+                        el.appendChild(document.createTextNode(nestedElem[i]));
+                    }
                     // check the array item is an element node
-                    if (type_checker.is_element_node(nestedElem[i])) {       
+                    else if (type_checker.is_element_node(nestedElem[i])) {       
                         // and attach each element
                         el.appendChild(nestedElem[i]);
                     }

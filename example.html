@@ -9,6 +9,9 @@
 
         <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 
+        <!-- FontAwesome (v5.15.3) SVG JS -->
+        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" data-auto-replace-svg="nest"></script>
+
     </head>
 
     <body class="bg-gray-900 text-gray-100 min-h-screen">
@@ -116,6 +119,35 @@
             const bizness_markup = DOM.generate_elements(bizness);
 
             document.getElementById('target').appendChild(bizness_markup);
+
+
+
+
+
+
+
+
+            // Generate the markup
+            const docs_headline = DOM.generate_element('h1', "J.J. Fad's Supersonic", {
+                class: 'text-3xl'
+            });
+
+            // Add the generated markup to the document
+            document.getElementById('target').appendChild(docs_headline);
+
+
+
+
+
+
+
+
+            // Generate the markup
+            const icon = DOM.generate_element('i', false, { class: 'fas fa-volume-up mr-2' });
+            const headline2 = DOM.generate_element('h1', false, { class: 'text-3xl' }, [icon, "J.J. Fad's Supersonic"]);
+
+            // Add the generated markup to the document
+            document.getElementById('target').appendChild(headline2);
 
         </script>
 
