@@ -158,34 +158,3 @@ const headline = DOM.generate_element('h1', false, { class: 'text-3xl' }, [icon,
 document.getElementById('target').appendChild(headline);
 ```
 
-
-
----
-
-
-
-
-## The Dom Generator Class
-
-_Coming Soon!_
-
-
-
-### on_dom_ready()
-
-_Coming Soon!_
-
-
-
----
-
-
-
-
-## The Type Checker Class
-
-_Coming Soon!_
-
-
-
-
