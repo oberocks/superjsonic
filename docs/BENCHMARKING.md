@@ -8,7 +8,7 @@
 
 Lorem ipsum...
 
----
+<br>
 
 
 
@@ -16,7 +16,7 @@ Lorem ipsum...
 
 * [xxxx()](#xxxx)
 
----
+<br>
 
 
 
@@ -26,7 +26,7 @@ _Coming Soon!_
 
 
 
----
+<br>
 
 
 [BACK](../README.md)
