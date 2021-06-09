@@ -117,7 +117,7 @@ Welcome to the party!
 
 You can also generate a single element with Super JSONic, but the syntax is a little different to keep the keys required for the task to a minimum.
 
-So assuming we're still using our `const DOM = new Dom_generator();` in the above example, we can generate a single headline element and add it to our document like this:
+So assuming we're still using our `const JSONIC = new Dom_generator();` in the above example, we can generate a single headline element and add it to our document like this:
 
 ```javascript
 // Generate the markup
