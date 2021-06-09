@@ -9,6 +9,7 @@
 A set of powerful and tiny JavaScript ES Module (ESM) tooling classes to help developers turn declaritive JSON, atomic CSS classes, and copy/media into HTML DOM Elements.
 
 <br>
+---
 <br>
 
 # Table of Contents
@@ -22,6 +23,7 @@ A set of powerful and tiny JavaScript ES Module (ESM) tooling classes to help de
 * [The Type Checker Class](docs/TYPE_CHECKER.md)
 
 <br>
+---
 <br>
 
 
@@ -37,8 +39,8 @@ Enter the extremely radical, Super JSONic.
 > **A:** Glad you asked. It's not really super. But it is radical. But "Radical JSONic" doesn't harken the aged mind back to the (possibly) greatest Easy-E side project ever... [J.J. Fad](https://en.wikipedia.org/wiki/J._J._Fad). Anyway, much like the lyrics of [Supersonic](https://en.wikipedia.org/wiki/Supersonic_(J._J._Fad_album)), if you don't like this code, it'll go big in your behind. Don't say you weren't warned.
 
 <br>
+---
 <br>
-
 
 
 
@@ -47,6 +49,7 @@ Enter the extremely radical, Super JSONic.
 One cannot simply install Super JSONic. At least not yet, because it's still being developed and packaged for the wild - and the dope ass beatbox beats in the twisted imaginations of web developers around the globe.
 
 <br>
+---
 <br>
 
 
@@ -113,6 +116,7 @@ Welcome to the party!
 
 
 <br>
+---
 <br>
 
 
