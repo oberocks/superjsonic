@@ -71,7 +71,7 @@ Next up, let's bring some ESM action to this party with:
 
 The `Dom_generator` is pretty much the DJ of this party. So let's instantiate an instance of the Super JSONic `Dom_generator` class with the `new` keyword:
 ```javascript
-const DOM = new Dom_generator();
+const JSONIC = new Dom_generator();
 ```
 
 Next up, we need to request some "bizness" (it's an industry term) from our DJ. We can do this with Super JSONic by starting with... drumroll... JSON objects wrapped in a JavaScript array (so you can start with sibling parent elements just like this example):
@@ -90,7 +90,7 @@ const bizness = [
 
 With our `bizness` schema above, we can have our Super JSONic DJ, give us exactly what we want by using something like:
 ```javascript
-const bizness_markup = DOM.generate_elements(bizness);
+const bizness_markup = JSONIC.generate_elements(bizness);
 ```
 
 And of course, we can slap that markup into our DOM tree, with a little:
@@ -121,7 +121,7 @@ So assuming we're still using our `const DOM = new Dom_generator();` in the abov
 
 ```javascript
 // Generate the markup
-const headline = DOM.generate_element('h1', "J.J. Fad's Supersonic");
+const headline = JSONIC.generate_element('h1', "J.J. Fad's Supersonic");
 
 // Add the generated markup to the document
 document.getElementById('target').appendChild(headline);
@@ -130,7 +130,7 @@ document.getElementById('target').appendChild(headline);
 And if we wanted to specify some attributes for our element, we can simply use something like:
 
 ```javascript
-const headline = DOM.generate_element('h1', "J.J. Fad's Supersonic", {
+const headline = JSONIC.generate_element('h1', "J.J. Fad's Supersonic", {
   class: 'text-3xl'
 });
 ```
@@ -139,8 +139,8 @@ Or we could even slide in an icon (in this example a FontAwesome icon) to compli
 
 ```javascript
 // Generate the markup
-const icon = DOM.generate_element('i', false, { class: 'fas fa-volume-up mr-2' });
-const headline = DOM.generate_element('h1', [icon, "J.J. Fad's Supersonic"], {
+const icon = JSONIC.generate_element('i', false, { class: 'fas fa-volume-up mr-2' });
+const headline = JSONIC.generate_element('h1', [icon, "J.J. Fad's Supersonic"], {
   class: 'text-3xl'
 });
 
@@ -152,8 +152,8 @@ Conversely, instead of passing an array of an element node and a headline string
 
 ```javascript
 // Generate the markup
-const icon = DOM.generate_element('i', false, { class: 'fas fa-volume-up mr-2' });
-const headline = DOM.generate_element('h1', false, { class: 'text-3xl' }, [icon, "J.J. Fad's Supersonic"]);
+const icon = JSONIC.generate_element('i', false, { class: 'fas fa-volume-up mr-2' });
+const headline = JSONIC.generate_element('h1', false, { class: 'text-3xl' }, [icon, "J.J. Fad's Supersonic"]);
 
 // Add the generated markup to the document
 document.getElementById('target').appendChild(headline);
