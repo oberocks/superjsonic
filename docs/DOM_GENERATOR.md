@@ -37,6 +37,66 @@ _Coming Soon!_
 
 
 
+## append_child()
+
+_Coming Soon!_
+
+
+
+---
+
+
+
+## append_children_array()
+
+_Coming Soon!_
+
+
+
+---
+
+
+
+## apply_attributes()
+
+_Coming Soon!_
+
+
+
+---
+
+
+
+## generate_element()
+
+_Coming Soon!_
+
+
+
+---
+
+
+
+## generate_elements()
+
+_Coming Soon!_
+
+
+
+---
+
+
+
+## insert_text()
+
+_Coming Soon!_
+
+
+
+---
+
+
+
 ## on_dom_ready()
 
 _Coming Soon!_
