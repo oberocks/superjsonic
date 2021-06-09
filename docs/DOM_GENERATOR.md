@@ -8,7 +8,7 @@
 
 Lorem ipsum...
 
----
+<br>
 
 
 
@@ -23,7 +23,7 @@ Lorem ipsum...
 * [insert_text()](#insert_text)
 * [on_dom_ready()](#on_dom_ready)
 
----
+<br>
 
 
 
@@ -33,7 +33,7 @@ _Coming Soon!_
 
 
 
----
+<br>
 
 
 
@@ -43,7 +43,7 @@ _Coming Soon!_
 
 
 
----
+<br>
 
 
 
@@ -53,7 +53,7 @@ _Coming Soon!_
 
 
 
----
+<br>
 
 
 
@@ -63,7 +63,7 @@ _Coming Soon!_
 
 
 
----
+<br>
 
 
 
@@ -73,7 +73,7 @@ _Coming Soon!_
 
 
 
----
+<br>
 
 
 
@@ -83,7 +83,7 @@ _Coming Soon!_
 
 
 
----
+<br>
 
 
 
@@ -93,7 +93,7 @@ _Coming Soon!_
 
 
 
----
+<br>
 
 
 
@@ -103,7 +103,12 @@ _Coming Soon!_
 
 
 
+<br>
+
 ---
+
+
+[BACK](../README.md)
 
 
 [BACK](../README.md)
