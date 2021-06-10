@@ -18,16 +18,25 @@
 
         
         <div id="target"></div>
+        <div id="benchmarking-workspace"></div>
+        <div id="benchmarking-results"></div>
 
 
         <script type="module">
             
             // import module
             import { Dom_generator } from './superjsonic/Dom_generator.js';
+            import { Benchmarks } from './superjsonic/Benchmarks.js';
 
             // setup constant variables
             const DOM = new Dom_generator();
+            const BENCHMARK = new Benchmarks();
             const fragment = document.createDocumentFragment();
+
+
+
+
+
             
             // generate a headline element
             let headline = DOM.generate_element(
@@ -148,6 +157,59 @@
 
             // Add the generated markup to the document
             document.getElementById('target').appendChild(headline2);
+
+
+
+
+
+
+
+
+
+
+
+
+            function h1Test() {
+                return DOM.generate_element('h1', false, { class: 'text-3xl' }, [icon, "J.J. Fad's Supersonic"]);
+            };
+
+            BENCHMARK.generate_dom_test (
+                {
+                    slug : 'h1Test',
+                    name : 'h1Test() Test',
+                    target : 'benchmarking-workspace',
+                    loops : BENCHMARK.defaults.loops,
+                    description : 'Run (' + Number(BENCHMARK.defaults.loops).toLocaleString() + ') DOM.generate_element() calls each producing a <h1> & <p> elements with text and a class attribute string. Next, each element is inserted into a document fragment, which then gets inserted into the DOM before the test time is stopped. All generated elements are removed manually after the test has run.'
+                },
+                h1Test
+            );
+
+            BENCHMARK.render_results_card('h1Test', 'benchmarking-results');
+
+
+
+
+
+
+
+
+
+            function biznessTest() {
+                return DOM.generate_elements(bizness);
+            };
+
+            BENCHMARK.generate_dom_test (
+                {
+                    slug : 'biznessTest',
+                    name : 'biznessTest() Test',
+                    target : 'benchmarking-workspace',
+                    loops : BENCHMARK.defaults.loops,
+                    description : 'Run (' + Number(BENCHMARK.defaults.loops).toLocaleString() + ') DOM.generate_elements() calls each producing a <h1> element with text and a class attribute string. Next, each element is inserted into a document fragment, which then gets inserted into the DOM before the test time is stopped. All generated elements are removed manually after the test has run.'
+                },
+                h1Test
+            );
+
+            BENCHMARK.render_results_card('biznessTest', 'benchmarking-results');
 
         </script>
 
