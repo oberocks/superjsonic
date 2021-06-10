@@ -176,7 +176,7 @@
             BENCHMARK.append_nodes_test (
                 {
                     slug : 'h1Test',
-                    name : 'h1Test() Test',
+                    name : 'h1Test()',
                     target : 'benchmarking-workspace',
                     loops : BENCHMARK.defaults.loops,
                     description : 'Run (' + Number(BENCHMARK.defaults.loops).toLocaleString() + ') DOM.generate_element() calls each producing a <h1> & <p> elements with text and a class attribute string. Next, each element is inserted into a document fragment, which then gets inserted into the DOM before the test time is stopped. All generated elements are removed manually after the test has run.'
@@ -201,7 +201,7 @@
             BENCHMARK.append_nodes_test (
                 {
                     slug : 'biznessTest',
-                    name : 'biznessTest() Test',
+                    name : 'biznessTest()',
                     target : 'benchmarking-workspace',
                     loops : BENCHMARK.defaults.loops,
                     description : 'Run (' + Number(BENCHMARK.defaults.loops).toLocaleString() + ') DOM.generate_elements() calls each producing a <h1> element with text and a class attribute string. Next, each element is inserted into a document fragment, which then gets inserted into the DOM before the test time is stopped. All generated elements are removed manually after the test has run.'
@@ -221,7 +221,7 @@
 
 
 
-            function innerStringsTest() {
+            function innerStringsBiznessTest() {
                 let headline = '<h1>My Dope Song Request</h1>';
                 let paragraph = '<p>Check out my dope song request, Super JSONic DJ. My song request is naturally the late 80s smash hit "Supersonic" by J.J. Fad.</p>';
                 return headline + paragraph;
@@ -229,8 +229,8 @@
             
             BENCHMARK.append_nodes_test (
                 {
-                    slug : 'innerStringsTest',
-                    name : 'innerStringsTest() Test',
+                    slug : 'innerStringsBiznessTest',
+                    name : 'innerStringsBiznessTest()',
                     target : 'benchmarking-workspace',
                     loops : BENCHMARK.defaults.loops,
                     description : 'Run (' + Number(BENCHMARK.defaults.loops).toLocaleString() + ') string building calls each producing a <h1> & <p> elements with text and a class attribute string. Next, each element is inserted into an array of strings, which then gets inserted into the DOM as a joined (.join()) full length string before the test time is stopped. The generated string is removed manually after the test has run.'
@@ -238,7 +238,7 @@
                 h1Test
             );
 
-            BENCHMARK.render_results_card('innerStringsTest', 'benchmarking-results');
+            BENCHMARK.render_results_card('innerStringsBiznessTest', 'benchmarking-results');
 
 
 
