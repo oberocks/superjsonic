@@ -1,6 +1,6 @@
 {
   "name": "superjsonic",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "description": "A set of powerful and tiny JavaScript ES Module (ESM) tooling classes to help developers turn declaritive JSON, atomic CSS classes, and copy/media into HTML DOM Elements.",
   "main": "index.js",
   "scripts": {
