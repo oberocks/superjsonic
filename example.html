@@ -173,7 +173,7 @@
                 return DOM.generate_element('h1', false, { class: 'text-3xl' }, [icon, "J.J. Fad's Supersonic"]);
             };
 
-            BENCHMARK.generate_dom_test (
+            BENCHMARK.append_nodes_test (
                 {
                     slug : 'h1Test',
                     name : 'h1Test() Test',
@@ -198,7 +198,7 @@
                 return DOM.generate_elements(bizness);
             };
 
-            BENCHMARK.generate_dom_test (
+            BENCHMARK.append_nodes_test (
                 {
                     slug : 'biznessTest',
                     name : 'biznessTest() Test',
@@ -210,6 +210,43 @@
             );
 
             BENCHMARK.render_results_card('biznessTest', 'benchmarking-results');
+
+
+
+
+
+
+
+
+
+
+
+            function innerStringsTest() {
+                let headline = '<h1>My Dope Song Request</h1>';
+                let paragraph = '<p>Check out my dope song request, Super JSONic DJ. My song request is naturally the late 80s smash hit "Supersonic" by J.J. Fad.</p>';
+                return headline + paragraph;
+            };
+            
+            BENCHMARK.append_nodes_test (
+                {
+                    slug : 'innerStringsTest',
+                    name : 'innerStringsTest() Test',
+                    target : 'benchmarking-workspace',
+                    loops : BENCHMARK.defaults.loops,
+                    description : 'Run (' + Number(BENCHMARK.defaults.loops).toLocaleString() + ') string building calls each producing a <h1> & <p> elements with text and a class attribute string. Next, each element is inserted into an array of strings, which then gets inserted into the DOM as a joined (.join()) full length string before the test time is stopped. The generated string is removed manually after the test has run.'
+                },
+                h1Test
+            );
+
+            BENCHMARK.render_results_card('innerStringsTest', 'benchmarking-results');
+
+
+
+
+
+
+
+
 
         </script>
 

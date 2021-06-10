@@ -4,7 +4,7 @@ export class Benchmarks {
         
         // define default class settings/options
         this.defaults = {
-            loops : 10000
+            loops : 100000
         };
 
         // define default class settings/options
@@ -74,7 +74,7 @@ export class Benchmarks {
 
     }
 
-    generate_dom_test (options, callback) {
+    append_nodes_test (options, callback) {
         
         this.start(options.slug, {
             name : options.name,
@@ -92,6 +92,31 @@ export class Benchmarks {
         }
 
         document.getElementById(options.target).appendChild(fragment);
+
+        this.end(options.slug, this.now());
+
+        document.getElementById(options.target).innerHTML = '';
+
+    }
+
+    inner_strings_test (options, callback) {
+        
+        this.start(options.slug, {
+            name : options.name,
+            description : options.description,
+            start : this.now()
+        });
+        
+        const strings = [];
+
+        const loopCount = Number(options.loops);
+
+        for (var i = 0; i < loopCount; i++) {
+            let str = callback();
+            strings.push(str);
+        }
+
+        document.getElementById(options.target).innerHTML = strings.join('');
 
         this.end(options.slug, this.now());
 
