@@ -16,12 +16,22 @@ Additionally, the `Benchmarks` class provides a method to generate a DOM rendere
 
 # Table of Contents
 
+* [Benchmarking Example](#benchmarking-example)
 * [append_nodes_test()](#append_nodes_test)
 * [end()](#end)
 * [inner_strings_test()](#inner_strings_test)
 * [now()](#now)
 * [render_results_card()](#render_results_card)
 * [start()](#start)
+
+<br>
+
+
+
+## Benchmarking Example
+
+_Coming Soon!_
+
 
 <br>
 
