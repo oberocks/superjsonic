@@ -78,7 +78,7 @@ We can then go ahead and add our module JavaScript tag, import the necessary cla
         h1
     );
 
-    BENCHMARK.render_results_card('h1Test', 'benchmarking-results');
+    BENCHMARK.render_results_card('h1', 'benchmarking-results');
 
 </script>
 ```
