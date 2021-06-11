@@ -6,7 +6,9 @@
 
 # The Benchmarks Class
 
-Lorem ipsum...
+The `Benchmarks` class was pretty much born to facilitate... and eventually settle those heated developer arguments between team `createElement()` and team `innerHTML`. With this class, a dev can quickly set up some custom DOM generation functions that can be looped and inserted into the document with timing data baked-in. Then the generated and inserted markup is removed, and the test results are displayed in the browser's console.
+
+Additionally, the `Benchmarks` class provides a method to generate a DOM rendered markup "card" to display test results and times on an HTML page. This allows a developer to either see the data out of the console and/or present it to other project stakeholders. Or even do a screengrab to rub it in another dev's face... whatever gets the job done!
 
 <br>
 
@@ -14,18 +16,18 @@ Lorem ipsum...
 
 # Table of Contents
 
-* [start()](#start)
+* [append_nodes_test()](#append_nodes_test)
 * [end()](#end)
+* [inner_strings_test()](#inner_strings_test)
 * [now()](#now)
 * [render_results_card()](#render_results_card)
-* [append_nodes_test()](#append_nodes_test)
-* [inner_strings_test()](#inner_strings_test)
+* [start()](#start)
 
 <br>
 
 
 
-## start()
+## append_nodes_test()
 
 _Coming Soon!_
 
@@ -35,6 +37,15 @@ _Coming Soon!_
 
 
 ## end()
+
+_Coming Soon!_
+
+
+<br>
+
+
+
+## inner_strings_test()
 
 _Coming Soon!_
 
@@ -61,16 +72,7 @@ _Coming Soon!_
 
 
 
-## append_nodes_test()
-
-_Coming Soon!_
-
-
-<br>
-
-
-
-## inner_strings_test()
+## start()
 
 _Coming Soon!_
 
