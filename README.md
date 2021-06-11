@@ -27,7 +27,7 @@ A set of powerful and tiny JavaScript ES Module (ESM) tooling classes to help de
 
 ## Introduction
 
-Sometimes you just need to author some markup with JavaScript. Other times, you need to do this a LOT. It's times like those... that eventually lead to Super JSonic. Mostly because JSON is awesome. But also, because JavaScript is really rather verbose, sometimes seriously annoying (ahem... types we're looking @you), and sometimes it's seemingly impossible to keep CSS class strings DRY... at least when it comes to JS DOM generation/manipulation.
+Sometimes you just need to author some markup with JavaScript. Other times, you need to do this a LOT. It's times like those... that eventually lead to Super JSonic. Mostly because JS is awesome. But also, because JavaScript DOM creation is kind of verbose, sometimes a bit annoying (ahem... types we're looking @you), and sometimes it's seemingly impossible to keep CSS class strings DRY... at least when it comes to JS DOM generation/manipulation.
 
 Enter the extremely radical, Super JSonic.
 
