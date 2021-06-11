@@ -173,13 +173,13 @@
                 return DOM.generate_element('h1', false, { class: 'text-3xl' }, [icon, "J.J. Fad's Supersonic"]);
             };
 
-            BENCHMARK.append_nodes_test (
+            BENCHMARK.run_append_child_test (
                 {
                     slug : 'h1Test',
                     name : 'h1Test()',
                     target : 'benchmarking-workspace',
-                    loops : BENCHMARK.defaults.loops,
-                    description : 'Run (' + Number(BENCHMARK.defaults.loops).toLocaleString() + ') DOM.generate_element() calls each producing a <h1> & <p> elements with text and a class attribute string. Next, each element is inserted into a document fragment, which then gets inserted into the DOM before the test time is stopped. All generated elements are removed manually after the test has run.'
+                    loops : BENCHMARK.loops,
+                    description : 'Run (' + Number(BENCHMARK.loops).toLocaleString() + ') DOM.generate_element() calls each producing a <h1> & <p> elements with text and a class attribute string. Next, each element is inserted into a document fragment, which then gets inserted into the DOM before the test time is stopped. All generated elements are removed manually after the test has run.'
                 },
                 h1Test
             );
@@ -198,13 +198,13 @@
                 return DOM.generate_elements(bizness);
             };
 
-            BENCHMARK.append_nodes_test (
+            BENCHMARK.run_append_child_test (
                 {
                     slug : 'biznessTest',
                     name : 'biznessTest()',
                     target : 'benchmarking-workspace',
-                    loops : BENCHMARK.defaults.loops,
-                    description : 'Run (' + Number(BENCHMARK.defaults.loops).toLocaleString() + ') DOM.generate_elements() calls each producing a <h1> element with text and a class attribute string. Next, each element is inserted into a document fragment, which then gets inserted into the DOM before the test time is stopped. All generated elements are removed manually after the test has run.'
+                    loops : BENCHMARK.loops,
+                    description : 'Run (' + Number(BENCHMARK.loops).toLocaleString() + ') DOM.generate_elements() calls each producing a <h1> element with text and a class attribute string. Next, each element is inserted into a document fragment, which then gets inserted into the DOM before the test time is stopped. All generated elements are removed manually after the test has run.'
                 },
                 h1Test
             );
@@ -227,15 +227,15 @@
                 return headline + paragraph;
             };
             
-            BENCHMARK.append_nodes_test (
+            BENCHMARK.run_inner_html_test (
                 {
                     slug : 'innerStringsBiznessTest',
                     name : 'innerStringsBiznessTest()',
                     target : 'benchmarking-workspace',
-                    loops : BENCHMARK.defaults.loops,
-                    description : 'Run (' + Number(BENCHMARK.defaults.loops).toLocaleString() + ') string building calls each producing a <h1> & <p> elements with text and a class attribute string. Next, each element is inserted into an array of strings, which then gets inserted into the DOM as a joined (.join()) full length string before the test time is stopped. The generated string is removed manually after the test has run.'
+                    loops : BENCHMARK.loops,
+                    description : 'Run (' + Number(BENCHMARK.loops).toLocaleString() + ') string building calls each producing a <h1> & <p> elements with text and a class attribute string. Next, each element is inserted into an array of strings, which then gets inserted into the DOM as a joined (.join()) full length string before the test time is stopped. The generated string is removed manually after the test has run.'
                 },
-                h1Test
+                innerStringsBiznessTest
             );
 
             BENCHMARK.render_results_card('innerStringsBiznessTest', 'benchmarking-results');
