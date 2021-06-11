@@ -33,6 +33,47 @@ Additionally, the `Benchmarks` class provides a method to generate a DOM rendere
 _Coming Soon!_
 
 
+Assuming we have a `#benchmarking-workspace` element and a `#benchmarking-results` element in a HTML document's `<body>` tag like so:
+
+```html
+<div id="benchmarking-workspace"></div>
+<div id="benchmarking-results"></div>
+```
+
+
+```html
+<script type="module">
+            
+    // import modules
+    import { Benchmarks } from './superjsonic/Benchmarks.js';
+    import { Dom_generator } from './superjsonic/Dom_generator.js';
+  
+    // instantiate classes
+    const DOM = new Dom_generator();
+    const BENCHMARK = new Benchmarks();
+  
+    // create a function to test
+    function h1() {
+        return DOM.generate_element('h1', "J.J. Fad's Supersonic", { class: 'text-3xl' });
+    };
+
+    BENCHMARK.append_nodes_test (
+        {
+            slug : 'h1',
+            name : 'h1() Test',
+            target : 'benchmarking-workspace',
+            // loops : BENCHMARK.defaults.loops,
+            description : 'Run (' + Number(BENCHMARK.defaults.loops).toLocaleString() + ') DOM.generate_element() calls each producing a <h1> element with text and a class attribute string. Next, each element is inserted into a document fragment, which then gets inserted into the DOM before the test time is stopped. All generated elements are removed manually after the test has run.'
+        },
+        h1
+    );
+
+    BENCHMARK.render_results_card('h1Test', 'benchmarking-results');
+
+</script>
+```
+
+
 <br>
 
 
