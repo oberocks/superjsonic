@@ -6,7 +6,7 @@
 
 # The Type Checker Class
 
-Lorem ipsum...
+The `Type_checker` class is a utility class used by the `Dom_generator` class under the hood. So if you're using Super JSONic, then you're using the `Type_checker` class... so yeah... below you can read all about the methods you can leverage if you decide to pull this utility class into your supersonic ESM code.
 
 <br>
 
