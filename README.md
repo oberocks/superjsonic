@@ -16,7 +16,7 @@ A set of powerful and tiny JavaScript ES Module (ESM) tooling classes to help de
 * [Installation](#installation)
 * [Generating Elements](#generating-elements)
 * [Generating an Element](#generating-an-element)
-* [The Benchmarking Class](docs/BENCHMARKING.md)
+* [The Benchmarks Class](docs/BENCHMARKS.md)
 * [The Dom Generator Class](docs/DOM_GENERATOR.md)
 * [The Type Checker Class](docs/TYPE_CHECKER.md)
 
