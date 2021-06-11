@@ -16,7 +16,7 @@ Additionally, the `Benchmarks` class provides a method to generate a DOM rendere
 
 # Table of Contents
 
-* [Benchmarking Example](#benchmarking-example)
+* [Benchmarking Examples](#benchmarking-examples)
   * [Append Child Tests](#append-child-tests)
   * [InnerHTML Tests](#innerhtml-tests)
 * [end()](#end)
@@ -30,7 +30,7 @@ Additionally, the `Benchmarks` class provides a method to generate a DOM rendere
 
 
 
-## Benchmarking Example
+## Benchmarking Examples
 
 There are generally two ways to use the Benchmarking class. One is using the `run_append_child_test()` method to test JavaScript `appendChild()` DOM creation/insertions. The other `run_inner_html_test()` method conversely allows testing an `innerHTML` concatination/insertion.
 
