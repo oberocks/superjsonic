@@ -19,12 +19,13 @@ Additionally, the `Benchmarks` class provides a method to generate a DOM rendere
 * [Benchmarking Examples](#benchmarking-examples)
   * [Append Child Tests](#append-child-tests)
   * [InnerHTML Tests](#innerhtml-tests)
-* [end()](#end)
-* [now()](#now)
-* [render_results_card()](#render_results_card)
-* [run_append_child_test()](#run_append_child_test)
-* [run_inner_html_test()](#run_inner_html_test)
-* [start()](#start)
+* [Class Methods](#class-methods)
+  * [end()](#end)
+  * [now()](#now)
+  * [render_results_card()](#render_results_card)
+  * [run_append_child_test()](#run_append_child_test)
+  * [run_inner_html_test()](#run_inner_html_test)
+  * [start()](#start)
 
 <br>
 
@@ -33,6 +34,9 @@ Additionally, the `Benchmarks` class provides a method to generate a DOM rendere
 ## Benchmarking Examples
 
 There are generally two ways to use the Benchmarking class. One is using the `run_append_child_test()` method to test JavaScript `appendChild()` DOM creation/insertions. The other `run_inner_html_test()` method conversely allows testing an `innerHTML` concatination/insertion.
+
+<br>
+
 
 
 ### Append Child Tests
@@ -80,7 +84,20 @@ We can then go ahead and add our module JavaScript tag, import the necessary cla
 ```
 
 
+<br>
+
+
+
 ### InnerHTML Tests
+
+_Coming Soon!_
+
+
+<br>
+
+
+
+## Class Methods
 
 _Coming Soon!_
 
