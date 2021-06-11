@@ -17,6 +17,8 @@ Additionally, the `Benchmarks` class provides a method to generate a DOM rendere
 # Table of Contents
 
 * [Benchmarking Example](#benchmarking-example)
+  * [Append Child Tests](#append-child-tests)
+  * [InnerHTML Tests](#innerhtml-tests)
 * [end()](#end)
 * [now()](#now)
 * [render_results_card()](#render_results_card)
@@ -30,7 +32,10 @@ Additionally, the `Benchmarks` class provides a method to generate a DOM rendere
 
 ## Benchmarking Example
 
-_Coming Soon!_
+There are generally two ways to use the Benchmarking class. One is using the `run_append_child_test()` method to test JavaScript `appendChild()` DOM creation/insertions. The other `run_inner_html_test()` method conversely allows testing an `innerHTML` concatination/insertion.
+
+
+### Append Child Tests
 
 
 Assuming we have a `#benchmarking-workspace` element and a `#benchmarking-results` element in a HTML document's `<body>` tag like so:
@@ -73,6 +78,11 @@ We can then go ahead and add our module JavaScript tag, import the necessary cla
 
 </script>
 ```
+
+
+### InnerHTML Tests
+
+_Coming Soon!_
 
 
 <br>
