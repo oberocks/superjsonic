@@ -17,11 +17,11 @@ Additionally, the `Benchmarks` class provides a method to generate a DOM rendere
 # Table of Contents
 
 * [Benchmarking Example](#benchmarking-example)
-* [append_nodes_test()](#append_nodes_test)
 * [end()](#end)
-* [inner_strings_test()](#inner_strings_test)
 * [now()](#now)
 * [render_results_card()](#render_results_card)
+* [run_append_child_test()](#run_append_child_test)
+* [run_inner_html_test()](#run_inner_html_test)
 * [start()](#start)
 
 <br>
@@ -40,6 +40,7 @@ Assuming we have a `#benchmarking-workspace` element and a `#benchmarking-result
 <div id="benchmarking-results"></div>
 ```
 
+We can then go ahead and add our module JavaScript tag, import the necessary classes, instantiate them, create a function to test, and finally test the function as well as render out some markup when all is done to compliment the test results that are logged in the console!
 
 ```html
 <script type="module">
@@ -57,13 +58,13 @@ Assuming we have a `#benchmarking-workspace` element and a `#benchmarking-result
         return DOM.generate_element('h1', "J.J. Fad's Supersonic", { class: 'text-3xl' });
     };
 
-    BENCHMARK.append_nodes_test (
+    BENCHMARK.run_append_child_test (
         {
             slug : 'h1',
             name : 'h1() Test',
             target : 'benchmarking-workspace',
-            // loops : BENCHMARK.defaults.loops,
-            description : 'Run (' + Number(BENCHMARK.defaults.loops).toLocaleString() + ') DOM.generate_element() calls each producing a <h1> element with text and a class attribute string. Next, each element is inserted into a document fragment, which then gets inserted into the DOM before the test time is stopped. All generated elements are removed manually after the test has run.'
+            loops : BENCHMARK.loops,
+            description : 'Run (' + Number(BENCHMARK.loops).toLocaleString() + ') DOM.generate_element() calls each producing a <h1> element with text and a class attribute string. Next, each element is inserted into a document fragment, which then gets inserted into the DOM before the test time is stopped. All generated elements are removed manually after the test has run.'
         },
         h1
     );
@@ -78,25 +79,7 @@ Assuming we have a `#benchmarking-workspace` element and a `#benchmarking-result
 
 
 
-## append_nodes_test()
-
-_Coming Soon!_
-
-
-<br>
-
-
-
 ## end()
-
-_Coming Soon!_
-
-
-<br>
-
-
-
-## inner_strings_test()
 
 _Coming Soon!_
 
@@ -115,6 +98,24 @@ _Coming Soon!_
 
 
 ## render_results_card()
+
+_Coming Soon!_
+
+
+<br>
+
+
+
+## run_append_child_test()
+
+_Coming Soon!_
+
+
+<br>
+
+
+
+## run_inner_html_test()
 
 _Coming Soon!_
 
