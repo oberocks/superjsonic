@@ -1,23 +1,11 @@
 export class Benchmarks {
     
-    constructor (opts = false) {
+    constructor (loops = '10000') {
         
-        // define default class settings/options
-        this.defaults = {
-            loops : 100000
-        };
+        // set the default loop count for benchmark testing
+        this.loops = Number(loops.toString().replace(/[ ,.]/g, ''));
 
-        // define default class settings/options
-        // this._defaults = {
-        //     loops : 10000
-        // };
-
-        // merge any passed options settings into the default settings to get a final settings object
-        //this.defaults = (opts) ? settings_merge(this._defaults, opts) : this._defaults;
-
-        // clear original defaults
-        //this._defaults = null;
-
+        // set the default benchmark object to use as a container for testing data
         this.benchmarks = {};
 
     }
@@ -74,17 +62,18 @@ export class Benchmarks {
 
     }
 
-    append_nodes_test (options, callback) {
+    run_append_child_test (options, callback) {
         
         this.start(options.slug, {
             name : options.name,
             description : options.description,
+            loops : (options.loops) ? Number(options.loops).toLocaleString() : Number(this.loops).toLocaleString(),
             start : this.now()
         });
         
         const fragment = document.createDocumentFragment();
 
-        const loopCount = Number(options.loops);
+        const loopCount = (options.loops) ? Number(options.loops) : Number(this.loops);
 
         for (var i = 0; i < loopCount; i++) {
             let nodes = callback();
@@ -99,17 +88,18 @@ export class Benchmarks {
 
     }
 
-    inner_strings_test (options, callback) {
+    run_inner_html_test (options, callback) {
         
         this.start(options.slug, {
             name : options.name,
             description : options.description,
+            loops : (options.loops) ? Number(options.loops).toLocaleString() : Number(this.loops).toLocaleString(),
             start : this.now()
         });
         
         const strings = [];
 
-        const loopCount = Number(options.loops);
+        const loopCount = (options.loops) ? Number(options.loops) : Number(this.loops);
 
         for (var i = 0; i < loopCount; i++) {
             let str = callback();
