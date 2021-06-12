@@ -165,6 +165,7 @@ Here's an example of a navbar using an array of navigation link objects for data
 
 
 ```javascript
+// set the iteratable data
 const LINKS = [
     { text: 'Home', href: '/' },
     { text: 'About', href: 'about' },
@@ -172,11 +173,14 @@ const LINKS = [
     { text: 'Contact', href: 'contact' }
 ];
 
-const navbar = DOM.generate_element('div', false, { class: 'grid grid-cols-1 sm:grid-cols-4 gap-6 p-6' });
+// create the parent navbar element with grid classes
+const navbar = JSONIC.generate_element('div', false, { class: 'grid grid-cols-1 sm:grid-cols-4 gap-6 p-6' });
 
+// loop through the iterable data
 for ( var i = 0; i < LINKS.length; i++ ) {
 
-    navbar.appendChild( DOM.generate_element('a', LINKS[i].text, {
+    // generate and append an anchor elements to the navbar
+    navbar.appendChild( JSONIC.generate_element('a', LINKS[i].text, {
         class: 'bg-green-500 hover:bg-green-600 text-center',
         href: LINKS[i].href
     }));
