@@ -16,6 +16,7 @@ A set of powerful and tiny JavaScript ES Module (ESM) tooling classes to help de
 * [Installation](#installation)
 * [Generating Elements](#generating-elements)
 * [Generating an Element](#generating-an-element)
+* [A Navbar Example](#a-navbar-example)
 * [The Benchmarks Class](docs/BENCHMARKS.md)
 * [The Dom Generator Class](docs/DOM_GENERATOR.md)
 * [The Type Checker Class](docs/TYPE_CHECKER.md)
@@ -148,5 +149,41 @@ Conversely, instead of passing an array of an element node and a headline string
 // Generate the markup
 const icon = JSONIC.generate_element('i', false, { class: 'fas fa-volume-up mr-2' });
 const headline = JSONIC.generate_element('h1', false, { class: 'text-3xl' }, [icon, "J.J. Fad's Supersonic"]);
+```
+
+
+
+
+<br>
+
+
+
+
+## A Navbar Example
+
+Here's an example of a navbar using an array of navigation link objects for data, and s couple of `.generate_elements()` methods and a `for` loop. 
+
+
+```javascript
+const LINKS = [
+    { text: 'Home', href: '/' },
+    { text: 'About', href: 'about' },
+    { text: 'Blog', href: 'blog' },
+    { text: 'Contact', href: 'contact' }
+];
+
+const navbar = DOM.generate_element('div', false, { class: 'grid grid-cols-1 sm:grid-cols-4 gap-6 p-6' })
+
+for ( var i = 0; i < LINKS.length; i++ ) {
+
+    navbar.appendChild( DOM.generate_element('a', LINKS[i].text, {
+        class: 'bg-green-500 hover:bg-green-600 text-center',
+        href: LINKS[i].href
+    }));
+
+}
+
+// Add the generated markup to the document
+document.getElementById('target').appendChild(navbar);
 ```
 
