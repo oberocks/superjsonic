@@ -164,21 +164,30 @@
 
 
 
-            const siteLinks = [
+            const LINKS = [
                 { text: 'Home', href: '/' },
                 { text: 'About', href: 'about' },
                 { text: 'Blog', href: 'blog' },
                 { text: 'Contact', href: 'contact' }
             ];
             
-            const navbar = DOM.generate_element('div', false, { class: 'grid grid-cols-1 sm:grid-cols-4 gap-6 p-6' })
+            const navbar = DOM.generate_element('div', false, { class: 'grid grid-cols-1 sm:grid-cols-4 gap-6 p-6' });
 
-            for ( var i = 0; i < siteLinks.length; i++ ) {
-                
-                navbar.appendChild( DOM.generate_element('a', siteLinks[i].text, {
+            for ( var i = 0; i < LINKS.length; i++ ) {
+
+                const anchor = DOM.generate_element('a', LINKS[i].text, {
                     class: 'bg-green-500 hover:bg-green-600 text-center',
-                    href: siteLinks[i].href
-                }));
+                    href: LINKS[i].href
+                });
+
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    if (window.confirm('Do you really want to go to the ' + this.textContent + ' page?')) {
+                        location.assign(anchor.href);
+                    }
+                });
+                
+                navbar.appendChild( anchor );
                 
             }
 
