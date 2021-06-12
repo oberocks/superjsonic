@@ -10,7 +10,7 @@
         <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 
         <!-- FontAwesome (v5.15.3) SVG JS -->
-        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" data-auto-replace-svg="nest"></script>
+        <script defer src="https://pro.fontawesome.com/releases/v5.15.3/js/all.js" integrity="sha384-OF9QwbqmlzSPpIxe2GYS8lkGFyaFfrgUPD2J3qj8zGVps17Y/x8EK2U8PEl6UrpH" crossorigin="anonymous" data-auto-replace-svg="nest"></script>
 
     </head>
 
@@ -153,10 +153,37 @@
 
             // Generate the markup
             const icon = DOM.generate_element('i', false, { class: 'fas fa-volume-up mr-2' });
-            const headline2 = DOM.generate_element('h1', false, { class: 'text-3xl' }, [icon, "J.J. Fad's Supersonic"]);
+            const headline2 = DOM.generate_element('h1', [icon, "J.J. Fad's Supersonic v2"], { class: 'text-3xl' });
 
             // Add the generated markup to the document
             document.getElementById('target').appendChild(headline2);
+
+
+
+
+
+
+
+            const siteLinks = [
+                { text: 'Home', href: '/' },
+                { text: 'About', href: 'about' },
+                { text: 'Blog', href: 'blog' },
+                { text: 'Contact', href: 'contact' }
+            ];
+            
+            const navbar = DOM.generate_element('div', false, { class: 'grid grid-cols-1 sm:grid-cols-4 gap-6 p-6' })
+
+            for ( var i = 0; i < siteLinks.length; i++ ) {
+                
+                navbar.appendChild( DOM.generate_element('a', siteLinks[i].text, {
+                    class: 'bg-green-500 hover:bg-green-600 text-center',
+                    href: siteLinks[i].href
+                }));
+                
+            }
+
+            // Add the generated markup to the document
+            document.getElementById('target').appendChild(navbar);
 
 
 
@@ -170,6 +197,7 @@
 
 
             function h1Test() {
+                const icon = DOM.generate_element('i', false, { class: 'fas fa-volume-up mr-2' });
                 return DOM.generate_element('h1', false, { class: 'text-3xl' }, [icon, "J.J. Fad's Supersonic"]);
             };
 
