@@ -118,7 +118,7 @@ Welcome to the party!
 
 ## Generating an Element
 
-You can also generate a single element with Super JSonic, but the syntax is a little different to keep the keys required for the task to a minimum.
+You can also generate a single element with Super JSonic, but the syntax is a little different to keep the key strokes required for the functionality to a minimum.
 
 So assuming we're still using our `const JSONIC = new Dom_generator();` in the above example, we can generate a single headline element and add it to our document like this:
 
