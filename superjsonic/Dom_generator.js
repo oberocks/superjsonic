@@ -156,12 +156,16 @@ export class Dom_generator {
                         el.appendChild(document.createTextNode(nestedElem[i]));
                     }
                     // check the array item is an element node
-                    else if (type_checker.is_element_node(nestedElem[i])) {       
+                    if (type_checker.is_element_node(nestedElem[i])) {       
                         // and attach each element
                         el.appendChild(nestedElem[i]);
                     }
                 }
             } else {
+                // if it's a string then create a text node and append it to the returned element
+                if (type_checker.is_string(nestedElem)) {
+                    el.appendChild(document.createTextNode(nestedElem));
+                }
                 // check that the passed item is an element node
                 if (type_checker.is_element_node(nestedElem)) {           
                     // if so, then just attach the passed element
