@@ -172,7 +172,7 @@ const LINKS = [
     { text: 'Contact', href: 'contact' }
 ];
 
-const navbar = DOM.generate_element('div', false, { class: 'grid grid-cols-1 sm:grid-cols-4 gap-6 p-6' })
+const navbar = DOM.generate_element('div', false, { class: 'grid grid-cols-1 sm:grid-cols-4 gap-6 p-6' });
 
 for ( var i = 0; i < LINKS.length; i++ ) {
 
