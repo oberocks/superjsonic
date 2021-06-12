@@ -79,14 +79,8 @@ const JSONIC = new Dom_generator();
 Next up, we need to request some "bizness" (it's an industry term) from our DJ. We can do this with Super JSonic by starting with... drumroll... JS objects wrapped in a JS array (so you can start with sibling parent elements just like this example):
 ```javascript
 const bizness = [
-    {
-         tag: 'h1',
-         text: 'My Dope Song Request'
-    },
-    {
-         tag: 'p',
-         text: 'Check out my dope song request, Super JSonic DJ. My song request is naturally the late 80s smash hit "Supersonic" by J.J. Fad.'
-    }
+    { tag: 'h1', text: 'My Dope Song Request' },
+    { tag: 'p', text: 'My song request is naturally the late 80s smash hit "Supersonic" by J.J. Fad.' }
 ];
 ```
 
