@@ -76,7 +76,7 @@ The `Dom_generator` is pretty much the DJ of this party. So let's instantiate an
 const JSONIC = new Dom_generator();
 ```
 
-Next up, we need to request some "bizness" (it's an industry term) from our DJ. We can do this with Super JSonic by starting with... drumroll... JSON objects wrapped in a JavaScript array (so you can start with sibling parent elements just like this example):
+Next up, we need to request some "bizness" (it's an industry term) from our DJ. We can do this with Super JSonic by starting with... drumroll... JS objects wrapped in a JS array (so you can start with sibling parent elements just like this example):
 ```javascript
 const bizness = [
     {
