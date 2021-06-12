@@ -146,9 +146,6 @@ const icon = JSONIC.generate_element('i', false, { class: 'fas fa-volume-up mr-2
 const headline = JSONIC.generate_element('h1', [icon, "J.J. Fad's Supersonic"], {
   class: 'text-3xl'
 });
-
-// Add the generated markup to the document
-document.getElementById('target').appendChild(headline);
 ```
 
 Conversely, instead of passing an array of an element node and a headline string, we can set the text property to `false` and pass our icon element and headline string using the final child nodes parameter (which expects an array of text strings and/or element nodes) for your element like so:
@@ -157,8 +154,5 @@ Conversely, instead of passing an array of an element node and a headline string
 // Generate the markup
 const icon = JSONIC.generate_element('i', false, { class: 'fas fa-volume-up mr-2' });
 const headline = JSONIC.generate_element('h1', false, { class: 'text-3xl' }, [icon, "J.J. Fad's Supersonic"]);
-
-// Add the generated markup to the document
-document.getElementById('target').appendChild(headline);
 ```
 
