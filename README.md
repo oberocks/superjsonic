@@ -161,7 +161,7 @@ const headline = JSONIC.generate_element('h1', false, { class: 'text-3xl' }, [ic
 
 ## A Navbar Example
 
-Here's an example of a navbar using an array of navigation link objects for data, and s couple of `.generate_elements()` methods and a `for` loop. 
+Here's an example of a navbar using an array of navigation link objects for data, and a couple of `.generate_elements()` methods along with a `for` loop. 
 
 
 ```javascript
