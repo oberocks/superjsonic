@@ -19,6 +19,7 @@ A set of powerful and tiny JavaScript ES Module (ESM) tooling classes to help de
 * [A Navbar Example](#a-navbar-example)
 * [The Benchmarks Class](docs/BENCHMARKS.md)
 * [The Dom Generator Class](docs/DOM_GENERATOR.md)
+* [The Placeholders Class](docs/PLACEHOLDERS.md)
 * [The Type Checker Class](docs/TYPE_CHECKER.md)
 
 
