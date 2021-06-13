@@ -27,10 +27,18 @@
             // import module
             import { Dom_generator } from './superjsonic/Dom_generator.js';
             import { Benchmarks } from './superjsonic/Benchmarks.js';
+            import { Placeholders } from './superjsonic/Placeholders.js';
 
             // setup constant variables
             const DOM = new Dom_generator();
             const BENCHMARK = new Benchmarks();
+            const PLACEHOLDER = new Placeholders({
+                headlines: [
+                    'My First Placeholder Headline',
+                    'My Second Placeholder Headline',
+                    'My Third Placeholder Headline'
+                ]
+            });
             const fragment = document.createDocumentFragment();
 
 
@@ -41,11 +49,11 @@
             // generate a headline element
             let headline = DOM.generate_element(
                 'h1',
-                'Headline Example Text',
+                PLACEHOLDER.headline(),
                 { class: 'text-3xl text-center' }
             );
 
-            // generate a headline element
+            // generate a section element and append the headline element as a child node
             let section = DOM.generate_element(
                 'section',
                 false,
@@ -53,7 +61,7 @@
                 headline
             );
 
-            // append the element to the fragment
+            // append the section element to the fragment
             fragment.appendChild(section);
 
             // and append the fragment to the document
@@ -93,6 +101,15 @@
                                 'Lorem ipsum dolor sit amet, consectetur\'s adipisicing elit. Inventore, delectus quaerat aliquam illo aspernatur minus non a! Dicta error deserunt ',
                                 DOM.generate_element('a', 'lorem anchor textum', { class:'text-blue-400', href: '#' }),
                                 ' unde neque ad natus, cupiditate consectetur ullam quam eum debitis!'
+                            ]
+                        },
+                        {
+                            tag: 'p',
+                            attributes: {
+                                class: 'max-w-lg mx-auto text-center text-gray-300'
+                            },
+                            text: [
+                                PLACEHOLDER.paragraph()
                             ]
                         }
                     ]
