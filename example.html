@@ -18,6 +18,7 @@
 
         
         <div id="target"></div>
+        <div id="inner-html-workspace"></div>
         <div id="benchmarking-workspace"></div>
         <div id="benchmarking-results"></div>
 
@@ -40,6 +41,10 @@
                 ]
             });
             const fragment = document.createDocumentFragment();
+
+
+
+
 
 
 
@@ -156,6 +161,22 @@
             document.getElementById('target').appendChild(bizness_markup);
 
 
+            const biznessJSON = JSON.stringify( {'bizness': bizness} );
+            const biznessOBJECT = JSON.parse(biznessJSON)
+            console.log( biznessJSON );
+            console.log( biznessOBJECT );
+            console.log( biznessOBJECT.bizness );
+            console.log( biznessOBJECT[ Object.keys(biznessOBJECT)[0] ] );
+
+            const bizObj = DOM.generate_elements( biznessOBJECT[ Object.keys(biznessOBJECT)[0] ] );
+            const bizObj2 = DOM.generate_elements( biznessOBJECT.bizness );
+
+            document.getElementById('target').appendChild(bizObj);
+            document.getElementById('target').appendChild(bizObj2);
+
+
+
+
 
 
 
@@ -227,6 +248,21 @@
 
 
 
+            let innerTestHeadline = DOM.generate_element_string('p', PLACEHOLDER.paragraph(), { class: 'p-3', 'data-test': 'Test Value' });
+            //console.log(innerTestHeadline);
+
+            let innerTestInput = DOM.generate_element_string('input', false, { class: 'm-2 py-1 px-2 text-black', 'data-test': 'Test Value', type: 'text', placeholder: 'Enter Text' });
+            //console.log(innerTestInput);
+
+            document.getElementById('inner-html-workspace').innerHTML = innerTestHeadline + innerTestInput;
+
+
+
+
+
+
+
+
 
 
 
@@ -285,8 +321,8 @@
 
 
             function innerStringsBiznessTest() {
-                let headline = '<h1>My Dope Song Request</h1>';
-                let paragraph = '<p>Check out my dope song request, Super JSONic DJ. My song request is naturally the late 80s smash hit "Supersonic" by J.J. Fad.</p>';
+                let headline = '<h1 class="text-3xl mb-3">My Dope Song Request</h1>';
+                let paragraph = '<p class="mb-3">Check out my dope song request, Super JSONic DJ. My song request is naturally the late 80s smash hit "Supersonic" by J.J. Fad.</p>';
                 return headline + paragraph;
             };
             
@@ -302,6 +338,35 @@
             );
 
             BENCHMARK.render_results_card('innerStringsBiznessTest', 'benchmarking-results');
+
+
+
+
+
+
+
+
+
+
+
+
+            function generateElementStringTest() {
+                return DOM.generate_element_string('h1', 'My Dope Song Request', {class:'text-3xl mb-3'})
+                     + DOM.generate_element_string('p', 'Check out my dope song request, Super JSONic DJ. My song request is naturally the late 80s smash hit "Supersonic" by J.J. Fad.', {class:'mb-3'});
+            };
+            
+            BENCHMARK.run_inner_html_test (
+                {
+                    slug : 'generateElementStringTest',
+                    name : 'generateElementStringTest()',
+                    target : 'benchmarking-workspace',
+                    loops : BENCHMARK.loops,
+                    description : 'Run (' + Number(BENCHMARK.loops).toLocaleString() + ') .generate_element_string() calls each producing a <h1> & <p> elements with text and a class attribute string. Next, each element is inserted into an array of strings, which then gets inserted into the DOM as a joined (.join()) full length string before the test time is stopped. The generated string is removed manually after the test has run.'
+                },
+                generateElementStringTest
+            );
+
+            BENCHMARK.render_results_card('generateElementStringTest', 'benchmarking-results');
 
 
 

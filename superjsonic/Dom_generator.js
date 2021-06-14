@@ -2,6 +2,18 @@ import { Type_checker } from './Type_checker.js';
 
 export class Dom_generator {
     
+    constructor (opts = false) {
+
+        // https://developer.mozilla.org/en-US/docs/Glossary/Empty_element
+        // http://w3c.github.io/html-reference/syntax.html#syntax-elements
+        this.voids = ['area', 'base', 'br', 'col', 'command', 'embed', 'hr', 'img', 'input', 'keygen', 'link', 'meta', 'param', 'source', 'track', 'wbr'];
+
+        this.is_void = function (val) {
+            return (this.voids.indexOf(val) !== -1) ? true : false;
+        };
+
+    };
+    
     on_dom_ready (callback) {
         document.readyState === "interactive" || document.readyState === "complete" ? callback() : document.addEventListener("DOMContentLoaded", callback);
     }
@@ -231,6 +243,132 @@ export class Dom_generator {
         }
     
         return output;
+    
+    }
+
+    generate_element_string (elemType, elemText = false, attributes = false, nestedElem = false) {
+        
+        let type_checker = new Type_checker();
+
+        // initialize the string variables
+        let isVoid = this.is_void(elemType);
+        let opening = '<';
+        let inside = '';
+        let closing = '';
+
+        // check for a passed element tag
+        if (elemType) {
+            // 
+            opening += elemType;
+        }
+    
+        // check for passed object of html attribute key/value pairs
+        if (attributes) {
+            // check that the argument is an object and is not null
+            if (type_checker.is_object(attributes)) {
+                // loop through the object
+                for (var attr in attributes) {
+                    if (attributes.hasOwnProperty(attr)) {
+                        // 
+                        //el.setAttribute(attr, attributes[attr]);
+                        opening += ' ' + attr + '="' + attributes[attr] + '"';
+                    }
+                }
+            }
+        }
+
+        // 
+        if (isVoid) {
+            // 
+            opening += '/>';
+        } else {
+            // 
+            opening += '>';
+        }
+        
+        // check for passed elemText
+        if (!isVoid) {
+            if (elemText) {
+                // check if value is a string and has length
+                if (type_checker.is_string(elemText) && elemText.length > 0) {
+                    // 
+                    inside += elemText;
+                    // if it's a string then create a text node and append it to the returned element
+                    //el.appendChild(document.createTextNode(elemText));
+                } 
+                // if the value is an array
+                else if (type_checker.is_array(elemText) && elemText.length > 0) {
+                    // loop through the array
+                    for (var i = 0; i < elemText.length; i++) {
+                        // if it's a string then create a text node and append it to the returned element
+                        if (type_checker.is_string(elemText[i])) {
+                            // 
+                            inside += elemText;
+                            //el.appendChild(document.createTextNode(elemText[i]));
+                        }
+                        // if it's an element node then append it to the returned element
+                        else if (type_checker.is_element_node(elemText[i])) {
+                            // 
+                            let temp = document.createElement('div');
+                            temp.appendChild(elemText[i]);
+                            inside += temp.innerHTML;
+                            //el.appendChild(elemText[i]);
+                        }
+                    }
+                }
+            }
+        }
+        
+        // check for passed element array
+        if (!isVoid) {
+            if (nestedElem) {
+                // check if the passed argument is an array
+                if (type_checker.is_array(nestedElem)) {
+                    // loop through the array
+                    for (var i = 0; i < nestedElem.length; i++) {
+                        // if it's a string then create a text node and append it to the returned element
+                        if (type_checker.is_string(nestedElem[i])) {
+                            // 
+                            inside += elemText;
+                            //el.appendChild(document.createTextNode(nestedElem[i]));
+                        }
+                        // check the array item is an element node
+                        if (type_checker.is_element_node(nestedElem[i])) {       
+                            // 
+                            let temp = document.createElement('div');
+                            temp.appendChild(nestedElem[i]);
+                            inside += temp.innerHTML;
+                            // and attach each element
+                            //el.appendChild(nestedElem[i]);
+                        }
+                    }
+                } else {
+                    // if it's a string then create a text node and append it to the returned element
+                    if (type_checker.is_string(nestedElem)) {
+                        // 
+                        inside += elemText;
+                        //el.appendChild(document.createTextNode(nestedElem));
+                    }
+                    // check that the passed item is an element node
+                    if (type_checker.is_element_node(nestedElem)) {           
+                        // 
+                        let temp = document.createElement('div');
+                        temp.appendChild(nestedElem);
+                        inside += temp.innerHTML;
+                        // if so, then just attach the passed element
+                        //el.appendChild(nestedElem);
+                    }
+                }
+            }
+        }
+
+        if (!isVoid) {
+            // 
+            closing += '</' + elemType + '>';
+        }
+    
+        // return the concatinated element string
+        return opening + inside + closing;
     
     }
 
