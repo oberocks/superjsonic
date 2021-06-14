@@ -89,13 +89,13 @@
                             tag: 'h1',
                             text: 'Headline Example Text',
                             attributes: {
-                                class: 'text-3xl text-center'
+                                class: 'text-3xl text-center mb-3'
                             }
                         },
                         {
                             tag: 'p',
                             attributes: {
-                                class: 'max-w-lg mx-auto text-center text-gray-300'
+                                class: 'max-w-lg mx-auto text-center text-gray-300 mb-3'
                             },
                             text: [
                                 'Lorem ipsum dolor sit amet, consectetur\'s adipisicing elit. Inventore, delectus quaerat aliquam illo aspernatur minus non a! Dicta error deserunt ',
@@ -106,10 +106,19 @@
                         {
                             tag: 'p',
                             attributes: {
-                                class: 'max-w-lg mx-auto text-center text-gray-300'
+                                class: 'max-w-lg mx-auto text-center text-gray-300 mb-3'
                             },
                             text: [
                                 PLACEHOLDER.paragraph()
+                            ]
+                        },
+                        {
+                            tag: 'p',
+                            attributes: {
+                                class: 'max-w-lg mx-auto text-center text-gray-300'
+                            },
+                            text: [
+                                PLACEHOLDER.generate('paragraph')
                             ]
                         }
                     ]

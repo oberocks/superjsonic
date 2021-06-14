@@ -110,37 +110,32 @@ export class Placeholders {
 
     }
 
-    node (type, index = false) {
+    generate (type, index = false) {
         
-        let text;
+        let text = '';
         
-        if (type === 'headline') {
+        if (type === 'headline' || type === 'headlines') {
             
-            // 
             text = index ? this.headline(index) : this.headline();
 
-        } else if (type === 'paragraph') {
+        } else if (type === 'paragraph' || type === 'paragraphs') {
             
-            // 
             text = index ? this.paragraph(index) : this.paragraph();
 
-        } else if (type === 'quote') {
+        } else if (type === 'quote' || type === 'quotes') {
             
-            // 
             text = index ? this.quote(index) : this.quote();
 
-        } else if (type === 'title') {
+        } else if (type === 'title' || type === 'titles') {
             
-            // 
             text = index ? this.title(index) : this.title();
 
-        } else if (type === 'link') {
+        } else if (type === 'link' || type === 'links') {
             
-            // 
             text = index ? this.link(index) : this.link();
             
         }
 
-        return document.createTextNode( text );
+        return text;
     }
 }
