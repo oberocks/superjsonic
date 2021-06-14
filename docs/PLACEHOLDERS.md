@@ -6,7 +6,7 @@
 
 # The Placeholders Class
 
-_Coming Soon!_
+The `Placeholders` class is an optional utility class to generate placeholder text. By default the class outputs Latin language Lorem Ipsum placeholder text, but this can be changed and configured when the class is instantiated, as well.
 
 <br>
 
