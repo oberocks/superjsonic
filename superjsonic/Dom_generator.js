@@ -197,7 +197,7 @@ export class Dom_generator {
         if (outline) {
             settings = outline;
         } else {
-            console.error('OBE:WDS MC Error: The generate_elements() function requires a passed Array ([...]) of JavaScript objects (colloquially known as a "Cell Outline" in Molecular Components) that follow the tag/attribute/text/children key and values schema.');
+            console.error('Super JSonic Error: The generate_elements() function requires a passed Array ([...]) of JavaScript objects (colloquially known as a "Cell Outline" in Molecular Components) that follow the tag/attribute/text/children key and values schema.');
             return;
         }
     
@@ -230,13 +230,13 @@ export class Dom_generator {
     
                 } else {
     
-                    console.error("OBE:WDS MC Error: The array of objects passed (at index " + i + ") into the generate_elements() function did not have a 'tag' property. This property's String value is REQUIRED to properly generate your markup!");
+                    console.error("Super JSonic Error: The array of objects passed (at index " + i + ") into the generate_elements() function did not have a 'tag' property. This property's String value is REQUIRED to properly generate your markup!");
     
                 }
     
             } else {
     
-                console.error("OBE:WDS MC Error: The generate_elements() method requires that you pass an array of objects to properly generate your markup!");
+                console.error("Super JSonic Error: The generate_elements() method requires that you pass an array of objects to properly generate your markup!");
     
             }
     
