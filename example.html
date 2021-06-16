@@ -31,7 +31,7 @@
             import { Placeholders } from './superjsonic/Placeholders.js';
 
             // setup constant variables
-            const DOM = new Dom_generator();
+            const JSONIC = new Dom_generator();
             const BENCHMARK = new Benchmarks();
             const PLACEHOLDER = new Placeholders({
                 headlines: [
@@ -45,31 +45,66 @@
 
 
 
+            const heading_section = [
+                {
+                    tag: 'header',
+                    attributes: {
+                        class: 'max-w-md mx-auto'
+                    },
+                    children: [
+                        {
+                            tag: 'figure',
+                            attributes: {
+                                class: 'pt-8'
+                            },
+                            children: [
+                                {
+                                    tag: 'img',
+                                    attributes: {
+                                        src: 'SUPER-JSONIC-LOGO.png',
+                                        class: 'w-full p-4 mb-3',
+                                        alt: 'The Super JSonic logo with the top word (super) in a yellow to red starburst gradient, and the bottom word (jsonic) in a light to dark blue gradient.'
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ];
 
-
+            fragment.appendChild( JSONIC.generate_elements(heading_section) );
 
 
 
             
-            // generate a headline element
-            let headline = DOM.generate_element(
-                'h1',
-                PLACEHOLDER.headline(),
-                { class: 'text-3xl text-center' }
+            const article = JSONIC.generate_element('article', false, {class:'text-center'});
+
+            article.appendChild(
+                JSONIC.generate_element('h1', 'Examples', {class:'sm:text-3xl md:text-5xl mb-3'})
             );
 
-            // generate a section element and append the headline element as a child node
-            let section = DOM.generate_element(
-                'section',
-                false,
-                { class: 'grid grid-cols-1 items-center p-10' },
-                headline
+            const repo_link = JSONIC.generate_element('a', 'Super JSonic', {class:'text-yellow-300 hover:text-yellow-400', href:'https://github.com/oberocks/superjsonic', target:'_blank'});
+
+            article.appendChild(
+                JSONIC.generate_element('p', ['All of the content and examples on this page are made with ', repo_link, '!'], {class:'text-gray-400 mb-3'})
             );
 
-            // append the section element to the fragment
-            fragment.appendChild(section);
+            fragment.appendChild( article );
 
-            // and append the fragment to the document
+
+
+            const article_pre = JSONIC.generate_element('pre', "const article = JSONIC.generate_element('article', false, {class:'text-center'});", {class:'bg-black text-green-300 p-2'});
+
+            fragment.appendChild( article_pre );
+            
+            
+            
+            
+            
+            
+            
+            
+            
             document.getElementById('target').appendChild(fragment);
 
 
@@ -82,7 +117,103 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+            // generate a headline element
+            /*
+            let headline = JSONIC.generate_element(
+                'h1',
+                PLACEHOLDER.headline(),
+                { class: 'text-3xl text-center' }
+            );
+
+            // generate a section element and append the headline element as a child node
+            let section = JSONIC.generate_element(
+                'section',
+                false,
+                { class: 'grid grid-cols-1 items-center p-10' },
+                headline
+            );
+
+            // append the section element to the fragment
+            fragment.appendChild(section);
+
+            // and append the fragment to the document
+            document.getElementById('target').appendChild(fragment);
+            */
+
+
+
+
+
+
+
+
+
+
+
             // create a schema for multi-element markup
+            /*
             const article_schema = [
                 {
                     tag: 'article',
@@ -104,7 +235,7 @@
                             },
                             text: [
                                 'Lorem ipsum dolor sit amet, consectetur\'s adipisicing elit. Inventore, delectus quaerat aliquam illo aspernatur minus non a! Dicta error deserunt ',
-                                DOM.generate_element('a', 'lorem anchor textum', { class:'text-blue-400', href: '#' }),
+                                JSONIC.generate_element('a', 'lorem anchor textum', { class:'text-blue-400', href: '#' }),
                                 ' unde neque ad natus, cupiditate consectetur ullam quam eum debitis!'
                             ]
                         },
@@ -131,10 +262,11 @@
             ];
 
             // generate the markup elements with the schema
-            const article = DOM.generate_elements(article_schema);
+            const article = JSONIC.generate_elements(article_schema);
 
             // and append the fragment to the document
             document.getElementById('target').appendChild(article);
+            */
 
 
 
@@ -145,6 +277,7 @@
 
 
 
+            /*
             const bizness = [
                 {
                     tag: 'h1',
@@ -156,25 +289,35 @@
                 }
             ];
 
-            const bizness_markup = DOM.generate_elements(bizness);
+            const bizness_markup = JSONIC.generate_elements(bizness);
 
             document.getElementById('target').appendChild(bizness_markup);
 
 
             const biznessJSON = JSON.stringify( {'bizness': bizness} );
-            const biznessOBJECT = JSON.parse(biznessJSON)
-            console.log( biznessJSON );
-            console.log( biznessOBJECT );
-            console.log( biznessOBJECT.bizness );
-            console.log( biznessOBJECT[ Object.keys(biznessOBJECT)[0] ] );
+            const biznessOBJECT = JSON.parse(biznessJSON);
+            //console.log( biznessJSON );
+            //console.log( biznessOBJECT );
+            //console.log( biznessOBJECT.bizness );
+            //console.log( biznessOBJECT[ Object.keys(biznessOBJECT)[0] ] );
 
-            const bizObj = DOM.generate_elements( biznessOBJECT[ Object.keys(biznessOBJECT)[0] ] );
-            const bizObj2 = DOM.generate_elements( biznessOBJECT.bizness );
+            const bizObj = JSONIC.generate_elements( biznessOBJECT[ Object.keys(biznessOBJECT)[0] ] );
+            const bizObj2 = JSONIC.generate_elements( biznessOBJECT.bizness );
 
             document.getElementById('target').appendChild(bizObj);
             document.getElementById('target').appendChild(bizObj2);
 
 
+            bizness.push({tag:'p', text:'Lorem ipsum dolar si ahmet.'});
+            const extractedJson = JSONIC.convert_to_json('bizness', bizness);
+            console.log( extractedJson );
+
+            const jsonCompoFragment = JSONIC.generate_elements_from_json(extractedJson);
+            console.log( jsonCompoFragment );
+            document.getElementById('target').appendChild(jsonCompoFragment);
+            */
+
+
 
 
 
@@ -184,12 +327,14 @@
 
 
             // Generate the markup
-            const docs_headline = DOM.generate_element('h1', "J.J. Fad's Supersonic", {
+            /*
+            const docs_headline = JSONIC.generate_element('h1', "J.J. Fad's Supersonic", {
                 class: 'text-3xl'
             });
 
             // Add the generated markup to the document
             document.getElementById('target').appendChild(docs_headline);
+            */
 
 
 
@@ -199,11 +344,13 @@
 
 
             // Generate the markup
-            const icon = DOM.generate_element('i', false, { class: 'fas fa-volume-up mr-2' });
-            const headline2 = DOM.generate_element('h1', [icon, "J.J. Fad's Supersonic v2"], { class: 'text-3xl' });
+            /*
+            const icon = JSONIC.generate_element('i', false, { class: 'fas fa-volume-up mr-2' });
+            const headline2 = JSONIC.generate_element('h1', [icon, "J.J. Fad's Supersonic v2"], { class: 'text-3xl' });
 
             // Add the generated markup to the document
             document.getElementById('target').appendChild(headline2);
+            */
 
 
 
@@ -211,18 +358,18 @@
 
 
 
-            const LINKS = [
+            /*const LINKS = [
                 { text: 'Home', href: '/' },
                 { text: 'About', href: 'about' },
                 { text: 'Blog', href: 'blog' },
                 { text: 'Contact', href: 'contact' }
             ];
             
-            const navbar = DOM.generate_element('div', false, { class: 'grid grid-cols-1 sm:grid-cols-4 gap-6 p-6' });
+            const navbar = JSONIC.generate_element('div', false, { class: 'grid grid-cols-1 sm:grid-cols-4 gap-6 p-6' });
 
             for ( var i = 0; i < LINKS.length; i++ ) {
 
-                const anchor = DOM.generate_element('a', LINKS[i].text, {
+                const anchor = JSONIC.generate_element('a', LINKS[i].text, {
                     class: 'bg-green-500 hover:bg-green-600 text-center',
                     href: LINKS[i].href
                 });
@@ -239,7 +386,7 @@
             }
 
             // Add the generated markup to the document
-            document.getElementById('target').appendChild(navbar);
+            document.getElementById('target').appendChild(navbar);*/
 
 
 
@@ -248,13 +395,13 @@
 
 
 
-            let innerTestHeadline = DOM.generate_element_string('p', PLACEHOLDER.paragraph(), { class: 'p-3', 'data-test': 'Test Value' });
+            /*let innerTestHeadline = JSONIC.generate_element_string('p', PLACEHOLDER.paragraph(), { class: 'p-3', 'data-test': 'Test Value' });
             //console.log(innerTestHeadline);
 
-            let innerTestInput = DOM.generate_element_string('input', false, { class: 'm-2 py-1 px-2 text-black', 'data-test': 'Test Value', type: 'text', placeholder: 'Enter Text' });
+            let innerTestInput = JSONIC.generate_element_string('input', false, { class: 'm-2 py-1 px-2 text-black', 'data-test': 'Test Value', type: 'text', placeholder: 'Enter Text' });
             //console.log(innerTestInput);
 
-            document.getElementById('inner-html-workspace').innerHTML = innerTestHeadline + innerTestInput;
+            document.getElementById('inner-html-workspace').innerHTML = innerTestHeadline + innerTestInput;*/
 
 
 
@@ -267,9 +414,10 @@
 
 
 
+            /*
             function h1Test() {
-                const icon = DOM.generate_element('i', false, { class: 'fas fa-volume-up mr-2' });
-                return DOM.generate_element('h1', false, { class: 'text-3xl' }, [icon, "J.J. Fad's Supersonic"]);
+                const icon = JSONIC.generate_element('i', false, { class: 'fas fa-volume-up mr-2' });
+                return JSONIC.generate_element('h1', false, { class: 'text-3xl' }, [icon, "J.J. Fad's Supersonic"]);
             };
 
             BENCHMARK.run_append_child_test (
@@ -278,12 +426,13 @@
                     name : 'h1Test()',
                     target : 'benchmarking-workspace',
                     loops : BENCHMARK.loops,
-                    description : 'Run (' + Number(BENCHMARK.loops).toLocaleString() + ') DOM.generate_element() calls each producing a <h1> & <p> elements with text and a class attribute string. Next, each element is inserted into a document fragment, which then gets inserted into the DOM before the test time is stopped. All generated elements are removed manually after the test has run.'
+                    description : 'Run (' + Number(BENCHMARK.loops).toLocaleString() + ') JSONIC.generate_element() calls each producing a <h1> & <p> elements with text and a class attribute string. Next, each element is inserted into a document fragment, which then gets inserted into the DOM before the test time is stopped. All generated elements are removed manually after the test has run.'
                 },
                 h1Test
             );
 
             BENCHMARK.render_results_card('h1Test', 'benchmarking-results');
+            */
 
 
 
@@ -293,8 +442,9 @@
 
 
 
+            /*
             function biznessTest() {
-                return DOM.generate_elements(bizness);
+                return JSONIC.generate_elements(bizness);
             };
 
             BENCHMARK.run_append_child_test (
@@ -303,12 +453,13 @@
                     name : 'biznessTest()',
                     target : 'benchmarking-workspace',
                     loops : BENCHMARK.loops,
-                    description : 'Run (' + Number(BENCHMARK.loops).toLocaleString() + ') DOM.generate_elements() calls each producing a <h1> element with text and a class attribute string. Next, each element is inserted into a document fragment, which then gets inserted into the DOM before the test time is stopped. All generated elements are removed manually after the test has run.'
+                    description : 'Run (' + Number(BENCHMARK.loops).toLocaleString() + ') JSONIC.generate_elements() calls each producing a <h1> element with text and a class attribute string. Next, each element is inserted into a document fragment, which then gets inserted into the DOM before the test time is stopped. All generated elements are removed manually after the test has run.'
                 },
                 h1Test
             );
 
             BENCHMARK.render_results_card('biznessTest', 'benchmarking-results');
+            */
 
 
 
@@ -320,6 +471,7 @@
 
 
 
+            /*
             function innerStringsBiznessTest() {
                 let headline = '<h1 class="text-3xl mb-3">My Dope Song Request</h1>';
                 let paragraph = '<p class="mb-3">Check out my dope song request, Super JSONic DJ. My song request is naturally the late 80s smash hit "Supersonic" by J.J. Fad.</p>';
@@ -338,6 +490,7 @@
             );
 
             BENCHMARK.render_results_card('innerStringsBiznessTest', 'benchmarking-results');
+            */
 
 
 
@@ -350,9 +503,10 @@
 
 
 
+            /*
             function generateElementStringTest() {
-                return DOM.generate_element_string('h1', 'My Dope Song Request', {class:'text-3xl mb-3'})
-                     + DOM.generate_element_string('p', 'Check out my dope song request, Super JSONic DJ. My song request is naturally the late 80s smash hit "Supersonic" by J.J. Fad.', {class:'mb-3'});
+                return JSONIC.generate_element_string('h1', 'My Dope Song Request', {class:'text-3xl mb-3'})
+                     + JSONIC.generate_element_string('p', 'Check out my dope song request, Super JSONic DJ. My song request is naturally the late 80s smash hit "Supersonic" by J.J. Fad.', {class:'mb-3'});
             };
             
             BENCHMARK.run_inner_html_test (
@@ -367,6 +521,7 @@
             );
 
             BENCHMARK.render_results_card('generateElementStringTest', 'benchmarking-results');
+            */
 
 
 

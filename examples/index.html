@@ -1,0 +1,212 @@
+<!doctype html>
+<html>
+
+    <head>
+
+        <meta charset="UTF-8" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+        <link href="css/prism.css" rel="stylesheet">
+
+        <!-- FontAwesome (v5.15.3) SVG JS -->
+        <script defer src="https://pro.fontawesome.com/releases/v5.15.3/js/all.js" integrity="sha384-OF9QwbqmlzSPpIxe2GYS8lkGFyaFfrgUPD2J3qj8zGVps17Y/x8EK2U8PEl6UrpH" crossorigin="anonymous" data-auto-replace-svg="nest"></script>
+        <script src="js/prism.js"></script>
+
+    </head>
+
+    <body class="bg-gray-900 text-gray-100 min-h-screen">
+
+        
+        <div id="target"></div>
+        <div id="inner-html-workspace"></div>
+        <div id="benchmarking-workspace"></div>
+        <div id="benchmarking-results"></div>
+
+
+        <script type="module">
+            
+            // import module
+            import { Dom_generator } from '../superjsonic/Dom_generator.js';
+            import { Benchmarks } from '../superjsonic/Benchmarks.js';
+            import { Placeholders } from '../superjsonic/Placeholders.js';
+
+            // setup constant variables
+            const JSONIC = new Dom_generator();
+            const BENCHMARK = new Benchmarks();
+            const PLACEHOLDER = new Placeholders({
+                headlines: [
+                    'My First Placeholder Headline',
+                    'My Second Placeholder Headline',
+                    'My Third Placeholder Headline'
+                ]
+            });
+            const fragment = document.createDocumentFragment();
+
+
+            // utility funcs
+
+            const generate_pre_code_markup = function(labelText, codeContent, language = 'language-javascript') {
+                const outline = [
+                    {
+                        tag: 'div',
+                        attributes: {
+                            class: 'text-left p-1'
+                        },
+                        text: labelText
+                    },
+                    {
+                        tag: 'pre',
+                        attributes: {
+                            class: 'line-numbers'
+                        },
+                        children: [
+                            {
+                                tag: 'code',
+                                attributes: {
+                                    class: language
+                                },
+                                text: codeContent
+                            }
+                        ]
+                    }
+                ];
+                return JSONIC.generate_elements(outline);
+            };
+
+
+
+
+
+            fragment.appendChild( JSONIC.generate_elements([{
+                    tag: 'header',
+                    attributes: {
+                        class: 'max-w-md mx-auto pt-8'
+                    },
+                    children: [
+                        {
+                            tag: 'img',
+                            attributes: {
+                                src: 'images/SUPER-JSONIC-LOGO.png',
+                                class: 'w-full p-4 mb-3',
+                                alt: 'The Super JSonic logo with the top word (super) in a yellow to red starburst gradient, and the bottom word (jsonic) in a light to dark blue gradient.'
+                            }
+                        }
+                    ]
+            }]) );
+
+
+
+            
+            const article = JSONIC.generate_element('article', false, {class:'px-6 mx-auto text-center'});
+
+            article.appendChild(
+                JSONIC.generate_element('h1', 'Examples', {class:'sm:text-3xl md:text-5xl mb-3'})
+            );
+
+            article.appendChild(
+                JSONIC.generate_element(
+                    'p',
+                    ['All of the content and examples on this page are made with ', JSONIC.generate_element('a', 'Super JSonic', {class:'text-yellow-300 hover:text-yellow-400', href:'https://github.com/oberocks/superjsonic', target:'_blank'}), '!'],
+                    {class:'text-gray-400 mb-10'}
+                )
+            );
+
+            fragment.appendChild( article );
+
+const article_code_string = `
+import { Dom_generator } from '../superjsonic/Dom_generator.js';
+
+const JSONIC = new Dom_generator();
+
+const fragment = document.createDocumentFragment();
+
+fragment.appendChild( JSONIC.generate_elements([{
+        tag: 'header',
+        attributes: {
+            class: 'max-w-md mx-auto pt-8'
+        },
+        children: [
+            {
+                tag: 'img',
+                attributes: {
+                    src: 'images/SUPER-JSONIC-LOGO.png',
+                    class: 'w-full p-4 mb-3',
+                    alt: 'The Super JSonic logo with the top word (super) in a yellow to red starburst gradient, and the bottom word (jsonic) in a light to dark blue gradient.'
+                }
+            }
+        ]
+}]) );
+
+const article = JSONIC.generate_element('article', false, {class:'text-center'});
+
+article.appendChild(
+    JSONIC.generate_element('h1', 'Examples', {class:'sm:text-3xl md:text-5xl mb-3'})
+);
+
+article.appendChild(
+    JSONIC.generate_element(
+        'p',
+        ['All of the content and examples on this page are made with ', JSONIC.generate_element('a', 'Super JSonic', {class:'text-yellow-300 hover:text-yellow-400', href:'https://github.com/oberocks/superjsonic', target:'_blank'}), '!'],
+        {class:'text-gray-400 mb-10'}
+    )
+);
+
+fragment.appendChild( article );
+
+document.body.appendChild(fragment);
+`;
+
+            article.appendChild(
+                generate_pre_code_markup('For example, the following code was used to create the <header> and <article> markup on this page:', article_code_string)
+            );
+
+const article_output_markup = `
+<header class="max-w-md mx-auto pt-8">
+
+    <img src="images/SUPER-JSONIC-LOGO.png" class="w-full p-4 mb-3" alt="The Super JSonic logo with the top word (super) in a yellow to red starburst gradient, and the bottom word (jsonic) in a light to dark blue gradient.">
+
+</header>
+
+<article class="px-6 mx-auto text-center">
+
+    <h1 class="sm:text-3xl md:text-5xl mb-3">Examples</h1>
+
+    <p class="text-gray-400 mb-10">All of the content and examples on this page are made with <a class="text-yellow-300 hover:text-yellow-400" href="https://github.com/oberocks/superjsonic" target="_blank">Super JSonic</a>!</p>
+    
+    <div class="text-left p-1">For example, the following code was used to create the &lt;header&gt; and &lt;article&gt; markup on this page:</div>
+    
+    <div class="code-toolbar">
+
+        <pre class="line-numbers language-javascript" tabindex="0">
+            <code class="language-javascript">...</code>
+        </pre>
+
+    </div>
+
+</article>
+`;
+
+            article.appendChild(
+                generate_pre_code_markup('Which will generate the following markup:', article_output_markup, 'language-html')
+            );
+
+
+
+
+
+
+
+
+
+
+
+
+            document.body.appendChild(fragment);
+
+        </script>
+
+    </body>
+
+</html>
