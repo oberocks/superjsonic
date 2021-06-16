@@ -372,4 +372,15 @@ export class Dom_generator {
     
     }
 
+    convert_to_json (name, obj) {
+        const component = {};
+        component[name] = obj;
+        return JSON.stringify( component );
+    }
+
+    generate_elements_from_json (jsonCompo) {
+        const obj = JSON.parse(jsonCompo);
+        return this.generate_elements( obj[ Object.keys(obj)[0] ] );
+    }
+
 }
