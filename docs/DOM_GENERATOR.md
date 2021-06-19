@@ -6,7 +6,7 @@
 
 # The Dom Generator Class
 
-Lorem ipsum...
+The `Dom_generator` class is the main course in the Super JSonic menu of classes. This class is used to generate single elements all the way to complex component markup from JavaScript objects, JSON representations of markup, markup represnetations of JSON, and more. It's a full course meal in and of itself!
 
 <br>
 
