@@ -39,7 +39,7 @@ _Coming Soon!_
 
 ## append_child()
 
-The `append_child()` method checks that the `childNode` argument is a Node that is an [Element Node](https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType), and if so appends the `childNode` argument's [Element Node](https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType) to the `node` argument
+The `append_child()` method checks that the `child` argument is a Node that is an [Element Node](https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType), and if so appends the `child` argument's [Element Node](https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType) to the `node` argument
 
 | Parameters | Argument Type | Required | Description |
 | ---------- | ------------- | -------- | ----------- |
