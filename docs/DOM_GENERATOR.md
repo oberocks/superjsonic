@@ -39,7 +39,14 @@ _Coming Soon!_
 
 ## append_child()
 
-_Coming Soon!_
+The `append_child()` method checks that the `childNode` argument is a Node that is an [Element Node](https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType), and if so appends the `childNode` argument's [Element Node](https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType) to the `node` argument
+
+| Parameters  | Argument Type | Required | Description |
+| ----------- | ------------- | -------- | ----------- |
+| `node`      | Element Node  | Yes      | xxxxxxxxxxx |
+| `childNode` | Element Node  | Yes      | xxxxxxxxxxx |
+
+append_child (node, childNode)
 
 
 
@@ -66,7 +73,7 @@ The `apply_attributes()` method mutates the passed in [Element](https://develope
 | Parameters | Argument Type | Required | Description |
 | ---------- | ------------- | -------- | ----------- |
 | `node`     | Element Node  | Yes      | The [Element](https://developer.mozilla.org/en-US/docs/Web/API/Element) node to receive the attributes defined in the `obj` argument. |
-| `obj`      | JS Object     | No       | The JavaScript object that defines the attributes added to the `node` argument, where each key of this object is set as an Element attribute name and each value is set as an Element attribute value. |
+| `obj`      | JS Object     | Yes      | The JavaScript object that defines the attributes added to the `node` argument, where each key of this object is set as an Element attribute name and each value is set as an Element attribute value. |
 
 A trivial example:
 
