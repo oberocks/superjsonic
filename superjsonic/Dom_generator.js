@@ -46,8 +46,8 @@ export class Dom_generator {
         }
     }
 
-    append_child (node, childNode) {
-        node.appendChild(childNode);
+    append_child (node, child) {
+        node.appendChild(child);
     }
 
     append_children_array (node, array) {

@@ -111,9 +111,14 @@
 
 
 
+const div = document.createElement('div');
+const comment = document.createComment(' This div has a span child element. ');
+const span = document.createElement('span');
 
+JSONIC.append_child(div, comment);
+JSONIC.append_child(div, span);
 
-
+document.getElementById('target').appendChild(div);
 
 
 
