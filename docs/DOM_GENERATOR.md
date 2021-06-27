@@ -43,8 +43,8 @@ The `append_child()` method checks that the `childNode` argument is a Node that 
 
 | Parameters | Argument Type | Required | Description |
 | ---------- | ------------- | -------- | ----------- |
-| `node`     | Element Node  | Yes      | xxxxxxxxxxx |
-| `child`    | Element Node  | Yes      | xxxxxxxxxxx |
+| `node`     | Element Node  | Yes      | The [Element](https://developer.mozilla.org/en-US/docs/Web/API/Element) to receive the `child` Node. |
+| `child`    | Node          | Yes      | The child [Node](https://developer.mozilla.org/en-US/docs/Web/API/Node) that is appended to the parent [Element](https://developer.mozilla.org/en-US/docs/Web/API/Element) `node`. |
 
 A trivial example:
 
