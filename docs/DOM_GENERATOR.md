@@ -59,7 +59,33 @@ _Coming Soon!_
 
 ## apply_attributes()
 
-_Coming Soon!_
+The `apply_attributes()` method mutates the passed in [Element](https://developer.mozilla.org/en-US/docs/Web/API/Element) node, and assigns [Element Attributes](https://developer.mozilla.org/en-US/docs/Web/API/Element/attributes) to the Element where each object property key/value pair is transformed into an attribute name/value pair of the Element node.
+
+> This is generally used as a utility function for the [generate_element()](#generate_element) and [generate_elements()](#generate_elements) methods.
+
+| Parameters | Argument Type | Required | Description |
+| ---------- | ------------- | -------- | ----------- |
+| `node`     | Element Node  | Yes      | The [Element](https://developer.mozilla.org/en-US/docs/Web/API/Element) node to receive the attributes defined in the `obj` argument. |
+| `obj`      | JS Object     | No       | The JavaScript object that defines the attributes added to the `node` argument, where each key of this object is set as an Element attribute name and each value is set as an Element attribute value. |
+
+A trivial example:
+
+```javascript
+const div = document.createElement('div');
+
+const attributes = {
+    class: 'text-center',
+    "data-example-attr": 'some value'
+};
+
+Dom_generator.apply_attributes(div, attributes);
+```
+
+The trivial code above (after being generated) would then resolve in the DOM to somehting like this:
+
+```html
+<div class="text-center" data-example-attr="some value"></div>
+```
 
 
 
