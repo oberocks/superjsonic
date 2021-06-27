@@ -41,12 +41,30 @@ _Coming Soon!_
 
 The `append_child()` method checks that the `childNode` argument is a Node that is an [Element Node](https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType), and if so appends the `childNode` argument's [Element Node](https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType) to the `node` argument
 
-| Parameters  | Argument Type | Required | Description |
-| ----------- | ------------- | -------- | ----------- |
-| `node`      | Element Node  | Yes      | xxxxxxxxxxx |
-| `childNode` | Element Node  | Yes      | xxxxxxxxxxx |
+| Parameters | Argument Type | Required | Description |
+| ---------- | ------------- | -------- | ----------- |
+| `node`     | Element Node  | Yes      | xxxxxxxxxxx |
+| `child`    | Element Node  | Yes      | xxxxxxxxxxx |
 
-append_child (node, childNode)
+A trivial example:
+
+```javascript
+const div = document.createElement('div');
+const comment = document.createComment(' This div has a span child element. ');
+const span = document.createElement('span');
+
+Dom_generator.append_child(div, comment);
+Dom_generator.append_child(div, span);
+```
+
+The trivial code above (after being generated) would then resolve in the DOM to somehting like this:
+
+```html
+<div>
+    <!-- This div has a span child elememt. -->
+    <span></span>
+</div>
+```
 
 
 
