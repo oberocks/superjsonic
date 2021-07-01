@@ -29,7 +29,7 @@ The `Dom_generator` class is the main course in the Super JSonic menu of classes
 
 ## add_to_dom()
 
-_Coming Soon!_
+The `add_to_dom()` method details... _Coming Soon!_
 
 
 
