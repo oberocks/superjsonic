@@ -74,7 +74,7 @@ The trivial code above (after being generated) would then resolve in the DOM to 
 
 ## append_children_array()
 
-_Coming Soon!_
+The `append_children_array()` method details... _Coming Soon!_
 
 
 
@@ -120,7 +120,7 @@ The trivial code above (after being generated) would then resolve in the DOM to 
 
 ## generate_element()
 
-_Coming Soon!_
+The `generate_element()` method details... _Coming Soon!_
 
 
 
@@ -130,7 +130,7 @@ _Coming Soon!_
 
 ## generate_elements()
 
-_Coming Soon!_
+The `generate_elements()` method details... _Coming Soon!_
 
 
 
@@ -140,7 +140,7 @@ _Coming Soon!_
 
 ## insert_text()
 
-_Coming Soon!_
+The `insert_text()` method details... _Coming Soon!_
 
 
 
@@ -150,7 +150,7 @@ _Coming Soon!_
 
 ## on_dom_ready()
 
-_Coming Soon!_
+The `on_dom_ready()` method details... _Coming Soon!_
 
 
 
