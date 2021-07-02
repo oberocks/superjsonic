@@ -43,20 +43,20 @@ The [`append_child()`](https://github.com/oberocks/superjsonic/blob/1c368a57b9ff
 
 > This is generally used as a utility function for the [generate_element()](#generate_element) and [generate_elements()](#generate_elements) methods.
 
-**Syntax:**
+🔸 **SYNTAX:**
 
 ```javascript
 .append_child(node, child)
 ```
 
-**Parameters:**
+🔸 **PARAMETERS:**
 
 | Parameters | Argument Type | Required | Description |
 | ---------- | ------------- | -------- | ----------- |
 | `node`     | DOM Node      | Yes      | The DOM [Node](https://developer.mozilla.org/en-US/docs/Web/API/Node) to receive the `child` Node. |
 | `child`    | Node          | Yes      | The child DOM [Node](https://developer.mozilla.org/en-US/docs/Web/API/Node) appended to the parent `node` Node. |
 
-**Example:**
+🔸 **EXAMPLE:**
 
 ```javascript
 const div = document.createElement('div');
@@ -67,7 +67,7 @@ Dom_generator.append_child(div, comment);
 Dom_generator.append_child(div, span);
 ```
 
-**Example Output:**
+🔸 **EXAMPLE OUTPUT:**
 
 ```html
 <div>
