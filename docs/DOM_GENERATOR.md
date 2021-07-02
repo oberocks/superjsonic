@@ -98,12 +98,20 @@ The `apply_attributes()` method mutates the passed in [Element](https://develope
 
 > This is generally used as a utility function for the [generate_element()](#generate_element) and [generate_elements()](#generate_elements) methods.
 
+🔹 **SYNTAX:**
+
+```javascript
+.apply_attributes(node, obj)
+```
+
+🔹 **PARAMETERS:**
+
 | Parameters | Argument Type | Required | Description |
 | ---------- | ------------- | -------- | ----------- |
 | `node`     | Element Node  | Yes      | The [Element](https://developer.mozilla.org/en-US/docs/Web/API/Element) node to receive the attributes defined in the `obj` argument. |
 | `obj`      | JS Object     | Yes      | The JavaScript object that defines the attributes added to the `node` argument, where each key of this object is set as an Element attribute name and each value is set as an Element attribute value. |
 
-A trivial example:
+🔹 **EXAMPLE:**
 
 ```javascript
 const div = document.createElement('div');
@@ -116,7 +124,7 @@ const attributes = {
 Dom_generator.apply_attributes(div, attributes);
 ```
 
-The trivial code above (after being generated) would then resolve in the DOM to somehting like this:
+🔹 **EXAMPLE OUTPUT:**
 
 ```html
 <div class="text-center" data-example-attr="some value"></div>
