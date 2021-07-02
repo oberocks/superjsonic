@@ -39,7 +39,7 @@ The `add_to_dom()` method details... _Coming Soon!_
 
 ## append_child()
 
-The [`append_child()`](https://github.com/oberocks/superjsonic/blob/1c368a57b9ff2382ae8e9b9a33bb0390db8ab268/superjsonic/Dom_generator.js#L49) method appends the `child` DOM [Node](https://developer.mozilla.org/en-US/docs/Web/API/Node) element (the 2nd argument) to the parent `node` DOM [Node](https://developer.mozilla.org/en-US/docs/Web/API/Node) (the 1st argument).
+The [`append_child()`](https://github.com/oberocks/superjsonic/blob/1c368a57b9ff2382ae8e9b9a33bb0390db8ab268/superjsonic/Dom_generator.js#L49) is an alias of the JavaScript [appendChild()](https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild) method, which appends the `child` DOM [Node](https://developer.mozilla.org/en-US/docs/Web/API/Node) element (the 2nd argument) to the parent DOM [Node](https://developer.mozilla.org/en-US/docs/Web/API/Node) `node` (the 1st argument).
 
 ```javascript
 .append_child(node, child)
@@ -65,7 +65,7 @@ The trivial code above (after being generated) would then resolve in the DOM to 
 
 ```html
 <div>
-    <!-- This div has a span child elememt. -->
+    <!-- Congrats! This div is a parent, with a span child element. -->
     <span></span>
 </div>
 ```
