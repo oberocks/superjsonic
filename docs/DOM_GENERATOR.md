@@ -54,7 +54,7 @@ A trivial example:
 
 ```javascript
 const div = document.createElement('div');
-const comment = document.createComment(' This div has a span child element. ');
+const comment = document.createComment(' Congrats! This div is a parent, with a span child element. ');
 const span = document.createElement('span');
 
 Dom_generator.append_child(div, comment);
