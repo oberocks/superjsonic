@@ -29,23 +29,30 @@ The `Dom_generator` class is the main course in the Super JSonic menu of classes
 
 ## add_to_dom()
 
-The `add_to_dom()` method details... _Coming Soon!_
+The [`add_to_dom()`](https://github.com/oberocks/superjsonic/blob/1c368a57b9ff2382ae8e9b9a33bb0390db8ab268/superjsonic/Dom_generator.js#L76) method is a convenience method that allows developers to write insert-focused code in a human readable way.
+
+This method includes a flexible argument structure that provides access to standard JS DOM manipulation methods like: `.appendChild()`, `.insertBefore()`, `.replaceChild()` & `.removeChild()`. Additionally, there's a couple of jQuery inspired deritives of these standard JS methods, which are of the `.insertAfter()` & `.prepend()` varieties!
+
+> NOTE: All strings passed into this method are **Case Insensitive**, thanks to JS's `.toLowerCase()` method!
+
+| Argument | Parameter                                                | Required | Expected Value Type(s)     | Details/Notes
+| -------- | -------------------------------------------------------- | -------- | -------------------------- | -------------
+| 1        | `parent`                                                 | YES      | `element node`             | This should be a valid JavaScript Element Node.
+| 2        | `'append'` `'insert'` `'replace'` `'remove'` `'prepend'` | YES      | `string`                   | Passed strings are **Case Insensitive**! Expects one of these specific strings: `'append'`, `'insert'`, `'replace'`, `'remove'`, or `'prepend'`.
+| 3        | Child Element                                            | YES      | `element node`             | This should be a valid JavaScript Element Node.
+| 4        | Method Sub-Option or Child Element                       | NO       | `string` or `element node` | This argument is REQUIRED when the 2nd argument is `'insert'` or `'replace'`! Depending on your choice for a 2nd parameter, this argument can be either a `string` or an `element node`. If you are using `'insert'` or `'replace'` for your 2nd argument, then the 4th argument should be either `'before'` or `'after'` (for `.insertBefore()` or `.insertAfter()` functionality). If the 2nd argument is `'replace'`, then the 4th argument can be any string (even an empty string) and it will work. That said, it's recommended to use the string `'with'` as a 4th argument for `'replace'`, because it's super easy to read afterwards. Don't forget, all passed strings are **Case Insensitive**!
+| 5        | Reference Element                                        | NO       | `element node`             | This should be a valid JavaScript Element Node. This argument is REQUIRED whenever using `'insert'` (both `'before'` & `'after'` variations) along with the `'replace'`/`'with'` option.
+
+```javascript
+Dom_generator.add_to_dom(parent, 'append', element);
+Dom_generator.add_to_dom(parent, 'insert', element, 'before', el);
+Dom_generator.add_to_dom(parent, 'insert', element, 'after', el);
+Dom_generator.add_to_dom(parent, 'replace', element, 'with', el);
+Dom_generator.add_to_dom(parent, 'remove', element);
+Dom_generator.add_to_dom(parent, 'prepend', element);
+```
 
 <!---
-
-_A helper method that makes DOM element position manipulations more semantically readable and easier for non-specialists to understand. This method includes a flexible argument structure that provides access to standard JS DOM manipulation methods like: `.appendChild()`, `.insertBefore()`, `.replaceChild()` & `.removeChild()`. Additionally, there's a couple of jQuery inspired deritives of these standard JS methods, which are of the `.insertAfter()` & `.prepend()` varieties!_
-
->
-> NOTE: All strings passed into this method are **Case Insensitive**, thanks to JS's `.toLowerCase()`!
->
-
-Order | Parameter | Required | Expected Value Type(s) | Details/Notes
------ | --------- | -------- | -------------------------- | -------------
-1 | Parent Element | YES | `element node` | This should be a valid JavaScript Element Node.
-2 | Method Option | YES | `string` | Passed strings are **Case Insensitive**! Expects one of these specific strings: `'append'`, `'insert'`, `'replace'`, `'remove'`, or `'prepend'`.
-3 | Child Element | YES | `element node` | This should be a valid JavaScript Element Node.
-4 | Method Sub-Option or Child Element | NO | `string` or `element node` | This argument is REQUIRED when the 2nd argument is `'insert'` or `'replace'`! Depending on your choice for a 2nd parameter, this argument can be either a `string` or an `element node`. If you are using `'insert'` or `'replace'` for your 2nd argument, then the 4th argument should be either `'before'` or `'after'` (for `.insertBefore()` or `.insertAfter()` functionality). If the 2nd argument is `'replace'`, then the 4th argument can be any string (even an empty string) and it will work. That said, it's recommended to use the string `'with'` as a 4th argument for `'replace'`, because it's super easy to read afterwards. Don't forget, all passed strings are **Case Insensitive**!
-5 | Reference Element | NO | `element node` | This should be a valid JavaScript Element Node. This argument is REQUIRED whenever using `'insert'` (both `'before'` & `'after'` variations) along with the `'replace'`/`'with'` option.
 
 #### OBEBS4.dom() Semantic Examples (Recommended):
 ```javascript
