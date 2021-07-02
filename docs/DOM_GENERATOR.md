@@ -39,7 +39,11 @@ The `add_to_dom()` method details... _Coming Soon!_
 
 ## append_child()
 
-The `append_child()` method checks that the `child` argument is a Node that is an [Element Node](https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType), and if so appends the `child` argument's [Element Node](https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType) to the `node` argument
+The [`append_child()`](https://github.com/oberocks/superjsonic/blob/1c368a57b9ff2382ae8e9b9a33bb0390db8ab268/superjsonic/Dom_generator.js#L49) method appends the `child` [DOM Node](https://developer.mozilla.org/en-US/docs/Web/API/Node) element (the 2nd argument) to the parent `node` [DOM Node](https://developer.mozilla.org/en-US/docs/Web/API/Node) element (the 1st argument).
+
+```javascript
+.append_child(node, child)
+```
 
 | Parameters | Argument Type | Required | Description |
 | ---------- | ------------- | -------- | ----------- |
