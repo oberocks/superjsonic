@@ -41,16 +41,22 @@ The `add_to_dom()` method details... _Coming Soon!_
 
 The [`append_child()`](https://github.com/oberocks/superjsonic/blob/1c368a57b9ff2382ae8e9b9a33bb0390db8ab268/superjsonic/Dom_generator.js#L49) is an alias of the JavaScript [appendChild()](https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild) method, which appends the `child` DOM [Node](https://developer.mozilla.org/en-US/docs/Web/API/Node) element (the 2nd argument) to the parent DOM [Node](https://developer.mozilla.org/en-US/docs/Web/API/Node) `node` (the 1st argument).
 
+> This is generally used as a utility function for the [generate_element()](#generate_element) and [generate_elements()](#generate_elements) methods.
+
+**Syntax:**
+
 ```javascript
 .append_child(node, child)
 ```
+
+**Parameters:**
 
 | Parameters | Argument Type | Required | Description |
 | ---------- | ------------- | -------- | ----------- |
 | `node`     | DOM Node      | Yes      | The DOM [Node](https://developer.mozilla.org/en-US/docs/Web/API/Node) to receive the `child` Node. |
 | `child`    | Node          | Yes      | The child DOM [Node](https://developer.mozilla.org/en-US/docs/Web/API/Node) appended to the parent `node` Node. |
 
-A trivial example:
+**Example:**
 
 ```javascript
 const div = document.createElement('div');
@@ -61,7 +67,7 @@ Dom_generator.append_child(div, comment);
 Dom_generator.append_child(div, span);
 ```
 
-The trivial code above (after being generated) would then resolve in the DOM to somehting like this:
+**Example Output:**
 
 ```html
 <div>
