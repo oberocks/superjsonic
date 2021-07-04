@@ -73,7 +73,7 @@ export class Dom_generator {
         }
     }
 
-    add_to_dom (parent, type, el, subType = false, refNode = false) {
+    manipulate (parent, type, el, subType = false, refNode = false) {
         let type_checker = new Type_checker();
         let t = type.toLowerCase();
         if (t === 'appendchild' || t === 'append') {
