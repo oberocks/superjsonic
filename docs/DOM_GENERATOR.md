@@ -98,8 +98,8 @@ The [`apply_attributes()`](https://github.com/oberocks/superjsonic/blob/1c368a57
 
 Arg | Parameters | Required | Argument Type | Description
 --- | ---------- | -------- | ------------- | -----------
-1   | `node`     | Yes      | Element Node  | The [Element](https://developer.mozilla.org/en-US/docs/Web/API/Element) node to receive the attributes defined in the `obj` argument.
-2   | `obj`      | Yes      | JS Object     | The JavaScript object that defines the attributes added to the `node` argument, where each key of this object is set as an Element attribute name and each value is set as an Element attribute value.
+1   | `node`     | Yes      | Element Node  | The DOM [Node](https://developer.mozilla.org/en-US/docs/Web/API/Node) to receive the attributes defined in the `obj` argument.
+2   | `obj`      | Yes      | JS Object     | The JavaScript object that defines the attributes added to the `node` argument, where each key of this object is set as an attribute name and each value is set as an attribute value.
 
 🔹 **EXAMPLE:**
 
