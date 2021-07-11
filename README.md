@@ -126,12 +126,24 @@ const headline = JSONIC.generate_element('h1', "J.J. Fad's Supersonic");
 document.getElementById('target').appendChild(headline);
 ```
 
+Resulting in this markup in the `#target`:
+
+```html
+<h1>J.J. Fad's Supersonic</h1>
+```
+
 And if we wanted to specify some attributes for our element, we can simply use something like:
 
 ```javascript
 const headline = JSONIC.generate_element('h1', "J.J. Fad's Supersonic", {
   class: 'text-3xl'
 });
+```
+
+Resulting in:
+
+```html
+<h1 class="text-3xl">J.J. Fad's Supersonic</h1>
 ```
 
 Or we could even slide in an icon (in this example a FontAwesome icon) to compliment our headline's string with something like:
@@ -150,6 +162,14 @@ Conversely, instead of passing an array of an element node and a headline string
 // Generate the markup
 const icon = JSONIC.generate_element('i', false, { class: 'fas fa-volume-up mr-2' });
 const headline = JSONIC.generate_element('h1', false, { class: 'text-3xl' }, [icon, "J.J. Fad's Supersonic"]);
+```
+
+Each giving you the markup:
+<i class="fas fa-volume-up mr-2"></i>
+```html
+<h1 class="text-3xl">
+  <i class="fas fa-volume-up mr-2"></i>J.J. Fad's Supersonic
+</h1>
 ```
 
 
