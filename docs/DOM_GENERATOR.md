@@ -177,24 +177,59 @@ This method includes a flexible argument structure that provides access to stand
 
 🔹 **PARAMETERS:**
 
-Arg | Parameters                                               | Required | Argument Type              | Details/Notes
---- | -------------------------------------------------------- | -------- | -------------------------- | -------------
-1   | `parent`                                                 | Yes      | `element node`             | This should be a valid JavaScript Element Node.
-2   | `'append'` `'insert'` `'replace'` `'remove'` `'prepend'` | Yes      | `string`                   | Passed strings are **Case Insensitive**! Expects one of these specific strings: `'append'`, `'insert'`, `'replace'`, `'remove'`, or `'prepend'`.
-3   | Child Element                                            | Yes      | `element node`             | This should be a valid JavaScript Element Node.
-4   | Method Sub-Option or Child Element                       | No       | `string` or `element node` | This argument is REQUIRED when the 2nd argument is `'insert'` or `'replace'`! Depending on your choice for a 2nd parameter, this argument can be either a `string` or an `element node`. If you are using `'insert'` or `'replace'` for your 2nd argument, then the 4th argument should be either `'before'` or `'after'` (for `.insertBefore()` or `.insertAfter()` functionality). If the 2nd argument is `'replace'`, then the 4th argument can be any string (even an empty string) and it will work. That said, it's recommended to use the string `'with'` as a 4th argument for `'replace'`, because it's super easy to read afterwards. Don't forget, all passed strings are **Case Insensitive**!
-5   | Reference Element                                        | No       | `element node`             | This should be a valid JavaScript Element Node. This argument is REQUIRED whenever using `'insert'` (both `'before'` & `'after'` variations) along with the `'replace'`/`'with'` option.
+Arg | Parameters      | Required | Argument Type              | Details/Notes
+--- | --------------- | -------- | -------------------------- | -------------
+1   | `parent`        | Yes      | `element node`             | This should be a valid JavaScript Element Node.
+2   | `type`          | Yes      | `string`                   | Passed strings are **Case Insensitive**! Expects one of these specific strings: `'append'`, `'insert'`, `'replace'`, `'remove'`, or `'prepend'`.
+3   | `element`       | Yes      | `element node`             | This should be a valid JavaScript Element Node.
+4   | `subType`       | No       | `string` or `element node` | This argument is REQUIRED when the 2nd argument is `'insert'` or `'replace'`! Depending on your choice for a 2nd parameter, this argument can be either a `string` or an `element node`. If you are using `'insert'` or `'replace'` for your 2nd argument, then the 4th argument should be either `'before'` or `'after'` (for `.insertBefore()` or `.insertAfter()` functionality). If the 2nd argument is `'replace'`, then the 4th argument can be any string (even an empty string) and it will work. That said, it's recommended to use the string `'with'` as a 4th argument for `'replace'`, because it's super easy to read afterwards. Don't forget, all passed strings are **Case Insensitive**!
+5   | `referenceNode` | No       | `element node`             | This should be a valid JavaScript Element Node. This argument is REQUIRED whenever using `'insert'` (both `'before'` & `'after'` variations) along with the `'replace'`/`'with'` option.
 
 🔹 **EXAMPLE:**
 
 ```javascript
-//
+import { Dom_generator } from './superjsonic/Dom_generator.js';
+
+const JSONIC = new Dom_generator();
+
+let parent = JSONIC.element('section');
+
+let element_0 = JSONIC.element('p', 'Element #0');
+let element_1 = JSONIC.element('p', 'Element #1');
+let element_2 = JSONIC.element('p', 'Element #2');
+let element_3 = JSONIC.element('p', 'Element #3');
+let element_4 = JSONIC.element('p', 'Element #4');
+let element_5 = JSONIC.element('p', 'Element #5');
+let element_6 = JSONIC.element('p', 'Element #6');
+let element_7 = JSONIC.element('p', 'Element #7');
+let element_8 = JSONIC.element('p', 'Element #8');
+
+JSONIC.manipulate(parent, 'append', element_1);
+JSONIC.manipulate(parent, 'append', element_3);
+JSONIC.manipulate(parent, 'insert', element_2, 'before', element_3);
+JSONIC.manipulate(parent, 'append', element_5);
+JSONIC.manipulate(parent, 'insert', element_4, 'after', element_3);
+JSONIC.manipulate(parent, 'append', element_6);
+JSONIC.manipulate(parent, 'append', element_7);
+JSONIC.manipulate(parent, 'replace', element_7, 'with', element_8);
+JSONIC.manipulate(parent, 'remove', element_8);
+JSONIC.manipulate(parent, 'prepend', element_0);
+
+JSONIC.manipulate(document.getElementById('some-target-id'), 'append', domSection);
 ```
 
 🔹 **EXAMPLE OUTPUT:**
 
-```javascript
-//
+```html
+<section>
+    <p>Element #0</p>
+    <p>Element #1</p>
+    <p>Element #2</p>
+    <p>Element #3</p>
+    <p>Element #4</p>
+    <p>Element #5</p>
+    <p>Element #6</p>
+</section>
 ```
 
 <!---
