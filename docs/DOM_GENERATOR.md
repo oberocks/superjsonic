@@ -158,7 +158,7 @@ The `insert_text()` method details... _Coming Soon!_
 
 ## manipulate()
 
-The [`manipulate()`](https://github.com/oberocks/superjsonic/blob/1c368a57b9ff2382ae8e9b9a33bb0390db8ab268/superjsonic/Dom_generator.js#L76) method is a convenience method that allows developers to write DOM manipulation code in a human readable way.
+The [`manipulate()`](https://github.com/oberocks/superjsonic/blob/6124cdc6309adf3455433c63e28e98809b52c0b3/superjsonic/Dom_generator.js#L76) method is a convenience method that allows developers to write DOM manipulation code in a human readable way.
 
 This method includes a flexible argument structure that provides access to standard JS DOM manipulation methods like: `.appendChild()`, `.insertBefore()`, `.replaceChild()` & `.removeChild()`. Additionally, there's a couple of jQuery inspired deritives of these standard JS methods, which are of the `.insertAfter()` & `.prepend()` varieties!
 
