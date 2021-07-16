@@ -50,7 +50,7 @@ export class Dom_generator {
         node.appendChild(child);
     }
 
-    append_children_array (node, array) {
+    append_children (node, array) {
         let type_checker = new Type_checker();
         if (type_checker.is_array(array)) {
             for (var i = 0; i < array.length; i++) {
@@ -63,7 +63,7 @@ export class Dom_generator {
                         this.insert_text(child, array[i].text); 
                     }
                     if (array[i].children) {
-                        this.append_children_array(child, array[i].children);
+                        this.append_children(child, array[i].children);
                     }
                     node.appendChild(child);
                 } else if (type_checker.is_element_node(array[i])) {
@@ -221,7 +221,7 @@ export class Dom_generator {
                     }
     
                     if (settings[i].children) {
-                        this.append_children_array(parent, settings[i].children);
+                        this.append_children(parent, settings[i].children);
                     }
     
                     output.appendChild(parent);

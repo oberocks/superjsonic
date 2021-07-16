@@ -15,7 +15,7 @@ The `Dom_generator` class is the main course in the Super JSonic menu of classes
 # Table of Contents
 
 * [append_child()](#append_child)
-* [append_children_array()](#append_children_array)
+* [append_children()](#append_children)
 * [apply_attributes()](#apply_attributes)
 * [generate_element()](#generate_element)
 * [generate_elements()](#generate_elements)
@@ -72,9 +72,9 @@ Dom_generator.append_child(div, span);
 
 
 
-## append_children_array()
+## append_children()
 
-The `append_children_array()` method details... _Coming Soon!_
+The `append_children()` method details... _Coming Soon!_
 
 
 
