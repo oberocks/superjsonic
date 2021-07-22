@@ -177,13 +177,13 @@ This method includes a flexible argument structure that provides access to stand
 
 🔹 **PARAMETERS:**
 
-Arg | Parameters      | Required | Argument Type              | Details/Notes
---- | --------------- | -------- | -------------------------- | -------------
-1   | `parent`        | Yes      | `element node`             | This should be a valid JavaScript Element Node.
-2   | `type`          | Yes      | `string`                   | Passed strings are **Case Insensitive**! Expects one of these specific strings: `'append'`, `'insert'`, `'replace'`, `'remove'`, or `'prepend'`.
-3   | `element`       | Yes      | `element node`             | This should be a valid JavaScript Element Node.
-4   | `subType`       | No       | `string` or `element node` | This argument is REQUIRED when the 2nd argument is `'insert'` or `'replace'`! If you are using `'insert'` or `'replace'` for your 2nd argument, then the 4th argument should be either `'before'` or `'after'` (for `.insertBefore()` or `.insertAfter()` functionality). If the 2nd argument is `'replace'`, then the 4th argument can be any string (even an empty string) and it will work. That said, it's recommended to use the string `'with'` as a 4th argument for `'replace'`, because it's super easy to read afterwards. Don't forget, all passed strings are **Case Insensitive**!
-5   | `referenceNode` | No       | `element node`             | This should be a valid JavaScript Element Node. This argument is REQUIRED whenever using `'insert'` (both `'before'` & `'after'` variations) along with the `'replace'`/`'with'` option.
+Arg | Parameters | Required | Argument Type | Details/Notes
+--- | ---------- | -------- | ------------- | -------------
+1   | `parent`   | Yes      | Element Node  | The DOM [Node](https://developer.mozilla.org/en-US/docs/Web/API/Node) to receive child nodes (IE the parent element node)
+2   | `type`     | Yes      | String        | Passed strings are **Case Insensitive**! Expects one of strings: `'append'`, `'insert'`, `'replace'`, `'remove'`, or `'prepend'`
+3   | `element`  | Yes      | Element Node  | The DOM [Node](https://developer.mozilla.org/en-US/docs/Web/API/Node) to be inserted into the parent DOM Node element
+4   | `subType`  | No       | String        | This argument is REQUIRED when the 2nd argument is `'insert'` or `'replace'`! If you are using `'insert'` or `'replace'`, then this argument should be either `'before'` or `'after'` (for `.insertBefore()` or `.insertAfter()` functionality). If the 2nd argument is `'replace'`, then the 4th argument can be any string (even an empty string) and it will work. That said, it's recommended to use the string `'with'` as a 4th argument for `'replace'`, because it's super easy to read afterwards. Don't forget, all passed strings are **Case Insensitive**!
+5   | `refNode`  | No       | Element Node  | The DOM [Node](https://developer.mozilla.org/en-US/docs/Web/API/Node) to be used as a reference node for an adjacent node action all inside the parent node element. This argument is REQUIRED whenever using `'insert'` (both `'before'` & `'after'` variations) along with the `'replace'`/`'with'` option.
 
 🔹 **EXAMPLE:**
 
