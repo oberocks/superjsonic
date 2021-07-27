@@ -6,7 +6,7 @@
 
 # Super JSonic
 
-A set of powerful and tiny JavaScript ES Module (ESM) tooling classes to help developers turn an opinionated JavaScript object, atomic CSS classes, HTML attributes, and copy into HTML DOM Elements.
+A set of powerful and tiny JavaScript ES Module (ESM) tooling classes to help developers turn an opinionated JavaScript object, atomic CSS classes, HTML attributes, and copy into HTML DOM Elements of any complexity.
 
 <br>
 
