@@ -294,7 +294,7 @@ const headline_component = function (options) {
 };
 ```
 
-That's much better! So now, we can use our shiny new func like this:
+That's much better! So now, we can freestyle with our shiny new func. And it goes a little something like this:
 
 
 ```javascript
