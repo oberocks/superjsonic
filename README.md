@@ -17,6 +17,7 @@ A set of powerful and tiny JavaScript ES Module (ESM) tooling classes to help de
 * [Generating Elements](#generating-elements)
 * [Generating an Element](#generating-an-element)
 * [A Navbar Example](#a-navbar-example)
+* [Freestylin' JSonic Component Funcs](#freestylin-jsonic-component-funcs)
 * [The Benchmarks Class](docs/BENCHMARKS.md)
 * [The Dom Generator Class](docs/DOM_GENERATOR.md)
 * [The Placeholders Class](docs/PLACEHOLDERS.md)
@@ -263,7 +264,7 @@ const headline_component = function (options) {
 };
 ```
 
-This is a solid start! However, there's some practical aspects of using this component in real world scenraios that require more thought and work. For example, what if we want to use this component's content in differen visual alignment arrangements? Additionally, have we considered any SEO implications in our markup structure?
+This is a solid start! However, there's some practical aspects of using this component in real world scenraios that require more thought and work. For example, what if we want to use this component's content in different visual alignment arrangements? Additionally, have we considered any SEO implications in our markup structure?
 
 So let's improve our component with some additional depth to handle these questions with style and flexibility. Let's add a wrapping `<header>` element to fix both issues in one go!
 
