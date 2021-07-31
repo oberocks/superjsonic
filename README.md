@@ -298,7 +298,7 @@ That's much better! So now, we can freestyle with our shiny new func. And it goe
 
 
 ```javascript
-const my_view_headline = headline_component ({
+const my_headline = headline_component ({
     classes:  'w-full text-center',
     headline: 'My Awesome New Headline',
     subline:  'Powered by Super JSonic',
@@ -306,5 +306,5 @@ const my_view_headline = headline_component ({
     href:     'https://example.com'
 });
 
-document.body.appendChild(my_view_headline);
+document.body.appendChild(my_headline);
 ```
