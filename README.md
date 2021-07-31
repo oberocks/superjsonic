@@ -212,3 +212,64 @@ for ( var i = 0; i < LINKS.length; i++ ) {
 document.getElementById('target').appendChild(navbar);
 ```
 
+
+
+
+<br>
+
+
+
+
+## Freestylin' JSonic Component Funcs
+
+The most battle-ready way to use the Super JSonic approach, becomes stark once you start rapping the concept in executable functions. How a developer uses and orchestrates their own JSonic functions is totally up to the dev and the project's specific needs.
+
+Let's look at an example for a simple 3 element headline component, consisting of a headline, a subline, and a CTA link/button element.
+
+We can start by first sketching out our 3 elements into memory, like so:
+
+```javascript
+const headline = JSONIC.generate_element('h1', 'Default Headline Text', { class: 'text-3xl mb-1' });
+
+const subline = JSONIC.generate_element('p', 'Default Subline Text', { class: 'text-xl mb-3' });
+
+const cta = JSONIC.generate_element('a', 'DEFAULT CTA', {
+    class: 'bg-blue-500 text-white px-3 py-2',
+    href: '#'
+});
+```
+Next, we can decide upon some sort of options-based isolation of whatever we want to be mallable in our component func, and wrap our sketched elements within it like so:
+
+```javascript
+const headline_component = function (options) {
+    
+    const fragment = document.createDocumentFragment();
+    
+    const headline = JSONIC.generate_element('h1', options.headline, { class: 'text-3xl mb-1' });
+
+    const subline = JSONIC.generate_element('p', options.subline, { class: 'text-xl mb-3' });
+
+    const cta = JSONIC.generate_element('a', options.subline, {
+        class: 'bg-blue-500 text-white px-3 py-2',
+        href: options.href
+    });
+    
+    fragment.appendChild(headline);
+    fragment.appendChild(subline);
+    fragment.appendChild(cta);
+    
+    return fragment;
+
+};
+
+```
+
+
+
+```javascript
+const APP = {};
+APP.CONFIG = {};
+APP.COMPONENTS = {};
+```
+
+
