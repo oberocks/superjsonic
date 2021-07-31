@@ -299,13 +299,11 @@ That's much better! So now, we can use our shiny new func like this:
 
 ```javascript
 const my_view_headline = headline_component ({
-
     classes:  'w-full text-center',
     headline: 'My Awesome New Headline',
     subline:  'Powered by Super JSonic',
     cta:      "LET'S GOOOO!",
     href:     'https://example.com'
-    
 });
 
 document.body.appendChild(my_view_headline);
