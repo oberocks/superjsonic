@@ -238,7 +238,7 @@ const cta = JSONIC.generate_element('a', 'DEFAULT CTA', {
     href: '#'
 });
 ```
-Next, we can decide upon some sort of options-based isolation of whatever we want to be mallable in our component func, and wrap our sketched elements within it like so:
+Next, we can decide upon some sort of options-based isolation of whatever we want to be mallable in our component func, and wrap our sketched elements within it. Here's a hypothetical example using a classic options object:
 
 ```javascript
 const headline_component = function (options) {
@@ -249,7 +249,7 @@ const headline_component = function (options) {
 
     const subline = JSONIC.generate_element('p', options.subline, { class: 'text-xl mb-3' });
 
-    const cta = JSONIC.generate_element('a', options.subline, {
+    const cta = JSONIC.generate_element('a', options.cta, {
         class: 'bg-blue-500 text-white px-3 py-2',
         href: options.href
     });
@@ -261,15 +261,49 @@ const headline_component = function (options) {
     return fragment;
 
 };
-
 ```
 
+This is a solid start! However, there's some practical aspects of using this component in real world scenraios that require more thought and work. For example, what if we want to use this component's content in differen visual alignment arrangements? Additionally, have we considered any SEO implications in our markup structure?
+
+So let's improve our component with some additional depth to handle these questions with style and flexibility. Let's add a wrapping `<header>` element to fix both issues in one go!
+
+```javascript
+const headline_component = function (options) {
+    
+    const fragment = document.createDocumentFragment();
+    
+    const header = JSONIC.generate_element('header', false, { class: options.classes });
+    
+    const headline = JSONIC.generate_element('h1', options.headline, { class: 'text-3xl mb-1' });
+
+    const subline = JSONIC.generate_element('p', options.subline, { class: 'text-xl mb-3' });
+
+    const cta = JSONIC.generate_element('a', options.cta, {
+        class: 'bg-blue-500 text-white px-3 py-2',
+        href: options.href
+    });
+    
+    fragment.appendChild(header);
+    header.appendChild(headline);
+    header.appendChild(subline);
+    header.appendChild(cta);
+    
+    return fragment;
+
+};
+```
+
+That's much better! So now, we can use our shiny new func like this:
 
 
 ```javascript
-const APP = {};
-APP.CONFIG = {};
-APP.COMPONENTS = {};
+const my_view_headline = headline_component ({
+    classes: 'w-full text-center',
+    headline: 'My Awesome New Headline',
+    subline: 'Powered by Super JSonic',
+    cta: "LET'S GOOOO!",
+    href: 'https://example.com'
+});
+
+document.body.appendChild(my_view_headline);
 ```
-
-
