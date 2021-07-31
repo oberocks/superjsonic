@@ -44,7 +44,7 @@ Enter the extremely radical, Super JSonic.
 
 ## Installation
 
-One cannot simply install Super JSonic. At least not yet, because it's still being developed and packaged for the wild - and the dope ass beatbox beats in the twisted imaginations of web developers around the globe.
+One cannot simply install Super JSonic. At least not yet, because it's still being developed and packaged for the wild - and the so-called "dope ass" beatbox beats in the twisted imaginations of web developers around the globe.
 
 
 <br>
