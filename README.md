@@ -244,6 +244,8 @@ Next, we can decide upon some sort of options-based isolation of whatever we wan
 ```javascript
 const headline_component = function (options) {
     
+    const JSONIC = new Dom_generator();
+    
     const fragment = document.createDocumentFragment();
     
     const headline = JSONIC.generate_element('h1', options.headline, { class: 'text-3xl mb-1' });
@@ -270,6 +272,8 @@ So let's improve our component with some additional depth to handle these questi
 
 ```javascript
 const headline_component = function (options) {
+    
+    const JSONIC = new Dom_generator();
     
     const fragment = document.createDocumentFragment();
     
