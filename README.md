@@ -183,7 +183,7 @@ Each giving you the markup:
 
 ## A Navbar Example
 
-Here's an example of a navbar using an array of navigation link objects for data, and a couple of `.generate_elements()` methods along with a `for` loop. 
+Here is an example of a navbar using an array of navigation link objects for data, and a couple of `.generate_elements()` methods along with a `for` loop. 
 
 
 ```javascript
