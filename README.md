@@ -30,7 +30,7 @@ A set of powerful and tiny JavaScript ES Module (ESM) tooling classes to help de
 
 ## Introduction
 
-Sometimes you just need to author some markup with JavaScript. Other times, you need to do this a LOT. It's times like those... that eventually lead to Super JSonic. Mostly because JS is awesome. But also, because JavaScript DOM creation is kind of verbose, sometimes a bit annoying (ahem... types we're looking @you), and sometimes it's seemingly impossible to keep CSS class strings DRY... at least when it comes to JS DOM generation/manipulation.
+Sometimes you just need to author some markup with JavaScript. Other times, you need to do this a LOT. It's times like those... that eventually lead to Super JSonic. Mostly because JS is awesome. But also, because JavaScript DOM creation is kind of verbose, sometimes a bit annoying (ahem... types we are looking @you), and sometimes it's seemingly impossible to keep CSS class strings DRY... at least when it comes to JS DOM generation/manipulation.
 
 Enter the extremely radical, Super JSonic.
 
@@ -117,7 +117,7 @@ Welcome to the party!
 
 You can also generate a single element with Super JSonic, but the syntax is a little different to keep the key strokes required for the functionality to a minimum.
 
-So assuming we're still using our `const JSONIC = new Dom_generator();` in the above example, we can generate a single headline element and add it to our document like this:
+So assuming we are still using our `const JSONIC = new Dom_generator();` in the above example, we can generate a single headline element and add it to our document like this:
 
 ```javascript
 // Generate the markup
